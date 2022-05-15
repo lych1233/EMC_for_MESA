@@ -1,0 +1,114 @@
+{
+  "battle_won_mean": [
+    0.0
+  ],
+  "battle_won_mean_T": [
+    53
+  ],
+  "ep_length_mean": [
+    53.0
+  ],
+  "ep_length_mean_T": [
+    53
+  ],
+  "epsilon": [
+    1.0
+  ],
+  "epsilon_T": [
+    53
+  ],
+  "grad_norm": [
+    1.0028680562973022
+  ],
+  "grad_norm_T": [
+    1915
+  ],
+  "hit_prob": [
+    0.4292428493499756
+  ],
+  "hit_prob_T": [
+    1915
+  ],
+  "loss": [
+    0.08045648783445358
+  ],
+  "loss_T": [
+    1915
+  ],
+  "num_circle": [
+    2
+  ],
+  "num_circle_T": [
+    53
+  ],
+  "q_taken_mean": [
+    0.025079783945108517
+  ],
+  "q_taken_mean_T": [
+    1915
+  ],
+  "return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 4.132352941176469
+    }
+  ],
+  "return_mean_T": [
+    53
+  ],
+  "return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_std_T": [
+    53
+  ],
+  "target_mean": [
+    0.0836074019017896
+  ],
+  "target_mean_T": [
+    1915
+  ],
+  "td_error_abs": [
+    0.21127371924975522
+  ],
+  "td_error_abs_T": [
+    1915
+  ],
+  "test_battle_won_mean": [
+    0.0
+  ],
+  "test_battle_won_mean_T": [
+    53
+  ],
+  "test_ep_length_mean": [
+    119.84375
+  ],
+  "test_ep_length_mean_T": [
+    53
+  ],
+  "test_return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 6.216911764705881
+    }
+  ],
+  "test_return_mean_T": [
+    53
+  ],
+  "test_return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 1.2867804620884074
+    }
+  ],
+  "test_return_std_T": [
+    53
+  ]
+}

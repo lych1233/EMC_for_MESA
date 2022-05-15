@@ -2,8 +2,8 @@ from functools import partial
 # do not import SC2 in labtop
 import socket
 if 'MBP' not in socket.gethostname() and 'DESIGNARE' not in socket.gethostname():
-    from smac.env import MultiAgentEnv, StarCraft2Env, Matrix_game1Env, Matrix_game2Env, Matrix_game3Env, mmdp_game1Env, \
-        spread_xEnv, spread_x2Env, TwoState
+    from smac.env import MultiAgentEnv, StarCraft2Env, Matrix_game1Env, Matrix_game2Env, Matrix_game3Env, mmdp_game1Env #, \
+        # spread_xEnv, spread_x2Env, TwoState
 else:
     from .multiagentenv import MultiAgentEnv
 import sys
@@ -21,12 +21,14 @@ REGISTRY = {
     "matrix_game_2": partial(env_fn, env=Matrix_game2Env),
     "matrix_game_3": partial(env_fn, env=Matrix_game3Env),
     "mmdp_game_1": partial(env_fn, env=mmdp_game1Env),
-    "mmdp_game_2": partial(env_fn, env=TwoState),
-    "spread_x": partial(env_fn, env=spread_xEnv),
-    "spread_x2": partial(env_fn, env=spread_x2Env),
+    # "mmdp_game_2": partial(env_fn, env=TwoState),
+    # "spread_x": partial(env_fn, env=spread_xEnv),
+    # "spread_x2": partial(env_fn, env=spread_x2Env),
 } if 'MBP' not in socket.gethostname() and 'DESIGNARE' not in socket.gethostname() else {}
 REGISTRY["gridworld"] = GridworldEnv
 
+from smac.env import SmacClimbReward
+REGISTRY["smac_climbreward"] = partial(env_fn, env=SmacClimbReward)
 
 
 REGISTRY["stag_hunt"] = partial(env_fn, env=StagHunt)
@@ -34,3 +36,13 @@ REGISTRY["stag_hunt"] = partial(env_fn, env=StagHunt)
 if sys.platform == "linux":
     os.environ.setdefault("SC2PATH",
                           os.path.join(os.getcwd(), "3rdparty", "StarCraftII"))
+
+
+from .explore.env_wrapper import ExploreWrapper
+REGISTRY["explore"] = partial(env_fn, env=ExploreWrapper)
+
+from .naive.env_wrapper import NaiveWrapper
+REGISTRY["naive"] = partial(env_fn, env=NaiveWrapper)
+
+from .ma_mujoco import MAMuJoCoEnv
+REGISTRY["ma_mujoco"] = partial(env_fn, env=MAMuJoCoEnv)

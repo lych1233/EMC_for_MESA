@@ -1,0 +1,295 @@
+[INFO 05:28:03] pymarl Running command 'my_main'
+[INFO 05:28:03] pymarl Started run with ID "124"
+[DEBUG 05:28:03] pymarl Starting Heartbeat
+[DEBUG 05:28:03] my_main Started
+[INFO 05:28:03] my_main Experiment Parameters:
+[INFO 05:28:03] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn_fast',
+    'agent_output_type': 'q',
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'buffer_cpu_only': False,
+    'buffer_size': 5000,
+    'burn_in_period': 32,
+    'checkpoint_path': '',
+    'critic_lr': 0.0005,
+    'curiosity_decay': True,
+    'curiosity_decay_cycle': 100000,
+    'curiosity_decay_rate': 0.9,
+    'curiosity_decay_stop': 0.0,
+    'curiosity_scale': 0.001,
+    'double_q': True,
+    'emdqn_buffer_size': 1000000,
+    'emdqn_latent_dim': 4,
+    'emdqn_loss_weight': 0.01,
+    'env': 'smac_climbreward',
+    'env_args': {   'K_agents': 3,
+                    'continuing_episode': False,
+                    'debug': False,
+                    'difficulty': '7',
+                    'game_version': None,
+                    'heuristic_ai': False,
+                    'heuristic_rest': False,
+                    'map_name': '3s_vs_5z_instant',
+                    'move_amount': 2,
+                    'new_damage_reward': 1,
+                    'new_death_bonus': 0,
+                    'new_getdamage_penalty_scale': 0,
+                    'obs_all_health': True,
+                    'obs_instead_of_state': False,
+                    'obs_last_action': False,
+                    'obs_own_health': True,
+                    'obs_pathing_grid': False,
+                    'obs_terrain_height': False,
+                    'obs_timestep_number': False,
+                    'replay_dir': '',
+                    'replay_prefix': '',
+                    'reward_death_value': 10,
+                    'reward_defeat': 0,
+                    'reward_negative_scale': 0.5,
+                    'reward_only_positive': True,
+                    'reward_scale': True,
+                    'reward_scale_rate': 20,
+                    'reward_sparse': False,
+                    'reward_win': 200,
+                    'seed': 361066812,
+                    'state_last_action': True,
+                    'state_timestep_number': False,
+                    'step_mul': 8,
+                    'target_opponent': 0},
+    'epsilon_anneal_time': 50000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'is_batch_rl': False,
+    'is_from_start': True,
+    'is_prioritized_buffer': False,
+    'is_save_buffer': False,
+    'joint_random_policy_eps': 0.0,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_buffer_id': 0,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.0005,
+    'mac': 'fast_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'EMC_sc2_qmix',
+    'num_circle': 2,
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'predict2_vdn_target': True,
+    'predict_vdn_target': True,
+    'prioritized_buffer_alpha': 0.5,
+    'q_loss_weight': 1,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 64,
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_buffer': False,
+    'save_buffer_id': 0,
+    'save_buffer_interval': 1000,
+    'save_buffer_size': 10000,
+    'save_model': True,
+    'save_model_interval': 200000,
+    'save_replay': False,
+    'seed': 361066812,
+    'soft_update_tau': 0.005,
+    't_max': 2100000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_double_predict': False,
+    'use_emdqn': False,
+    'use_qtotal_td': False,
+    'use_tensorboard': True,
+    'vdn_soft_update': True}
+
+[INFO 05:28:03] my_main saving tb_logs to results/tb_logs/smac_climbreward/3s_vs_5z_instant/EMC_sc2_qmix__2022-04-29_05-28-03
+[INFO 05:28:05] my_main Beginning training for 2100000 timesteps
+[INFO 05:28:05] absl Launching SC2: /home/lych/IJCAI22/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 20507 -dataDir /home/lych/IJCAI22/StarCraftII/ -tempDir /tmp/sc-uo8ftj4l/ -eglpath libEGL.so
+[INFO 05:28:05] absl Connecting to: ws://127.0.0.1:20507/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/home/lych/IJCAI22/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 20507 -dataDir /home/lych/IJCAI22/StarCraftII/ -tempDir /tmp/sc-uo8ftj4l/ -eglpath libEGL.so'
+Starting up...
+Startup Phase 1 complete
+[INFO 05:28:06] absl Connecting to: ws://127.0.0.1:20507/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so ...
+Successfully loaded EGL library!
+Successfully initialized display on device idx: 0, EGL version: 1.5
+
+Running CGLSimpleDevice::HALInit...
+Calling glGetString: 0x7fa365fbffe0
+Version: 4.6.0 NVIDIA 460.56
+Vendor: NVIDIA Corporation
+Renderer: GeForce RTX 3070/PCIe/SSE2
+OpenGL initialized!
+Listening on: 127.0.0.1:20507
+Startup Phase 3 complete. Ready for commands.
+[INFO 05:28:07] absl Connecting to: ws://127.0.0.1:20507/sc2api, attempt: 2, running: True
+ConnectHandler: Request from 127.0.0.1:43338 accepted
+ReadyHandler: 127.0.0.1:43338 ready
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Using default stable ids, none found at: /home/lych/IJCAI22/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+[INFO 05:28:11] my_main t_env: 43 / 2100000
+[INFO 05:28:11] my_main Estimated time left: 20 minutes, 16 seconds. Time passed: 5 seconds
+cur_stats {}
+test_stats {}
+env_info {'battle_won': False}
+0 32
+cur_stats {'battle_won': 0, 'n_episodes': 1, 'ep_length': 30}
+test_stats {'battle_won': 0, 'n_episodes': 1, 'ep_length': 30}
+env_info {'battle_won': False}
+1 32
+cur_stats {'battle_won': 0, 'n_episodes': 2, 'ep_length': 80}
+test_stats {'battle_won': 0, 'n_episodes': 2, 'ep_length': 80}
+env_info {'battle_won': False}
+2 32
+cur_stats {'battle_won': 0, 'n_episodes': 3, 'ep_length': 130}
+test_stats {'battle_won': 0, 'n_episodes': 3, 'ep_length': 130}
+env_info {'battle_won': False}
+3 32
+cur_stats {'battle_won': 0, 'n_episodes': 4, 'ep_length': 180}
+test_stats {'battle_won': 0, 'n_episodes': 4, 'ep_length': 180}
+env_info {'battle_won': False}
+4 32
+cur_stats {'battle_won': 0, 'n_episodes': 5, 'ep_length': 230}
+test_stats {'battle_won': 0, 'n_episodes': 5, 'ep_length': 230}
+env_info {'battle_won': False}
+5 32
+cur_stats {'battle_won': 0, 'n_episodes': 6, 'ep_length': 270}
+test_stats {'battle_won': 0, 'n_episodes': 6, 'ep_length': 270}
+env_info {'battle_won': False}
+6 32
+cur_stats {'battle_won': 0, 'n_episodes': 7, 'ep_length': 320}
+test_stats {'battle_won': 0, 'n_episodes': 7, 'ep_length': 320}
+env_info {'battle_won': False}
+7 32
+cur_stats {'battle_won': 0, 'n_episodes': 8, 'ep_length': 370}
+test_stats {'battle_won': 0, 'n_episodes': 8, 'ep_length': 370}
+env_info {'battle_won': False}
+8 32
+cur_stats {'battle_won': 0, 'n_episodes': 9, 'ep_length': 420}
+test_stats {'battle_won': 0, 'n_episodes': 9, 'ep_length': 420}
+env_info {'battle_won': False}
+9 32
+cur_stats {'battle_won': 0, 'n_episodes': 10, 'ep_length': 470}
+test_stats {'battle_won': 0, 'n_episodes': 10, 'ep_length': 470}
+env_info {'battle_won': False}
+10 32
+cur_stats {'battle_won': 0, 'n_episodes': 11, 'ep_length': 520}
+test_stats {'battle_won': 0, 'n_episodes': 11, 'ep_length': 520}
+env_info {'battle_won': False}
+11 32
+cur_stats {'battle_won': 0, 'n_episodes': 12, 'ep_length': 553}
+test_stats {'battle_won': 0, 'n_episodes': 12, 'ep_length': 553}
+env_info {'battle_won': False}
+12 32
+cur_stats {'battle_won': 0, 'n_episodes': 13, 'ep_length': 603}
+test_stats {'battle_won': 0, 'n_episodes': 13, 'ep_length': 603}
+env_info {'battle_won': False}
+13 32
+cur_stats {'battle_won': 0, 'n_episodes': 14, 'ep_length': 653}
+test_stats {'battle_won': 0, 'n_episodes': 14, 'ep_length': 653}
+env_info {'battle_won': False}
+14 32
+cur_stats {'battle_won': 0, 'n_episodes': 15, 'ep_length': 703}
+test_stats {'battle_won': 0, 'n_episodes': 15, 'ep_length': 703}
+env_info {'battle_won': False}
+15 32
+cur_stats {'battle_won': 0, 'n_episodes': 16, 'ep_length': 734}
+test_stats {'battle_won': 0, 'n_episodes': 16, 'ep_length': 734}
+env_info {'battle_won': False}
+16 32
+cur_stats {'battle_won': 0, 'n_episodes': 17, 'ep_length': 784}
+test_stats {'battle_won': 0, 'n_episodes': 17, 'ep_length': 784}
+env_info {'battle_won': False}
+17 32
+cur_stats {'battle_won': 0, 'n_episodes': 18, 'ep_length': 819}
+test_stats {'battle_won': 0, 'n_episodes': 18, 'ep_length': 819}
+env_info {'battle_won': False}
+18 32
+cur_stats {'battle_won': 0, 'n_episodes': 19, 'ep_length': 869}
+test_stats {'battle_won': 0, 'n_episodes': 19, 'ep_length': 869}
+env_info {'battle_won': False}
+19 32
+cur_stats {'battle_won': 0, 'n_episodes': 20, 'ep_length': 898}
+test_stats {'battle_won': 0, 'n_episodes': 20, 'ep_length': 898}
+env_info {'battle_won': False}
+20 32
+cur_stats {'battle_won': 0, 'n_episodes': 21, 'ep_length': 934}
+test_stats {'battle_won': 0, 'n_episodes': 21, 'ep_length': 934}
+env_info {'battle_won': False}
+21 32
+cur_stats {'battle_won': 0, 'n_episodes': 22, 'ep_length': 968}
+test_stats {'battle_won': 0, 'n_episodes': 22, 'ep_length': 968}
+env_info {'battle_won': False}
+22 32
+cur_stats {'battle_won': 0, 'n_episodes': 23, 'ep_length': 1018}
+test_stats {'battle_won': 0, 'n_episodes': 23, 'ep_length': 1018}
+env_info {'battle_won': False}
+23 32
+cur_stats {'battle_won': 0, 'n_episodes': 24, 'ep_length': 1068}
+test_stats {'battle_won': 0, 'n_episodes': 24, 'ep_length': 1068}
+env_info {'battle_won': False}
+24 32
+cur_stats {'battle_won': 0, 'n_episodes': 25, 'ep_length': 1118}
+test_stats {'battle_won': 0, 'n_episodes': 25, 'ep_length': 1118}
+env_info {'battle_won': False}
+25 32
+cur_stats {'battle_won': 0, 'n_episodes': 26, 'ep_length': 1168}
+test_stats {'battle_won': 0, 'n_episodes': 26, 'ep_length': 1168}
+env_info {'battle_won': False}
+26 32
+cur_stats {'battle_won': 0, 'n_episodes': 27, 'ep_length': 1218}
+test_stats {'battle_won': 0, 'n_episodes': 27, 'ep_length': 1218}
+env_info {'battle_won': False}
+27 32
+cur_stats {'battle_won': 0, 'n_episodes': 28, 'ep_length': 1248}
+test_stats {'battle_won': 0, 'n_episodes': 28, 'ep_length': 1248}
+env_info {'battle_won': False}
+28 32
+cur_stats {'battle_won': 0, 'n_episodes': 29, 'ep_length': 1279}
+test_stats {'battle_won': 0, 'n_episodes': 29, 'ep_length': 1279}
+env_info {'battle_won': False}
+29 32
+cur_stats {'battle_won': 0, 'n_episodes': 30, 'ep_length': 1311}
+test_stats {'battle_won': 0, 'n_episodes': 30, 'ep_length': 1311}
+env_info {'battle_won': False}
+30 32
+cur_stats {'battle_won': 0, 'n_episodes': 31, 'ep_length': 1361}
+test_stats {'battle_won': 0, 'n_episodes': 31, 'ep_length': 1361}
+env_info {'battle_won': False}
+31 32
+[INFO 05:28:17] my_main Saving models to results/models/EMC_sc2_qmix__2022-04-29_05-28-03/43

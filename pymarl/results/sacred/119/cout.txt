@@ -1,0 +1,369 @@
+[INFO 05:03:16] pymarl Running command 'my_main'
+[INFO 05:03:16] pymarl Started run with ID "119"
+[DEBUG 05:03:16] pymarl Starting Heartbeat
+[DEBUG 05:03:16] my_main Started
+[INFO 05:03:16] my_main Experiment Parameters:
+[INFO 05:03:16] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn_fast',
+    'agent_output_type': 'q',
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'buffer_cpu_only': False,
+    'buffer_size': 5000,
+    'burn_in_period': 32,
+    'checkpoint_path': '',
+    'critic_lr': 0.0005,
+    'curiosity_decay': True,
+    'curiosity_decay_cycle': 100000,
+    'curiosity_decay_rate': 0.9,
+    'curiosity_decay_stop': 0.0,
+    'curiosity_scale': 0.001,
+    'double_q': True,
+    'emdqn_buffer_size': 1000000,
+    'emdqn_latent_dim': 4,
+    'emdqn_loss_weight': 0.01,
+    'env': 'smac_climbreward',
+    'env_args': {   'K_agents': 3,
+                    'continuing_episode': False,
+                    'debug': False,
+                    'difficulty': '7',
+                    'game_version': None,
+                    'heuristic_ai': False,
+                    'heuristic_rest': False,
+                    'map_name': '3s_vs_5z_medium',
+                    'move_amount': 2,
+                    'new_damage_reward': 1,
+                    'new_death_bonus': 0,
+                    'new_getdamage_penalty_scale': 0,
+                    'obs_all_health': True,
+                    'obs_instead_of_state': False,
+                    'obs_last_action': False,
+                    'obs_own_health': True,
+                    'obs_pathing_grid': False,
+                    'obs_terrain_height': False,
+                    'obs_timestep_number': False,
+                    'replay_dir': '',
+                    'replay_prefix': '',
+                    'reward_death_value': 10,
+                    'reward_defeat': 0,
+                    'reward_negative_scale': 0.5,
+                    'reward_only_positive': True,
+                    'reward_scale': True,
+                    'reward_scale_rate': 20,
+                    'reward_sparse': False,
+                    'reward_win': 200,
+                    'seed': 901686993,
+                    'state_last_action': True,
+                    'state_timestep_number': False,
+                    'step_mul': 8,
+                    'target_opponent': 0},
+    'epsilon_anneal_time': 50000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'is_batch_rl': False,
+    'is_from_start': True,
+    'is_prioritized_buffer': False,
+    'is_save_buffer': False,
+    'joint_random_policy_eps': 0.0,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_buffer_id': 0,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.0005,
+    'mac': 'fast_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'EMC_sc2_qmix',
+    'num_circle': 2,
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'predict2_vdn_target': True,
+    'predict_vdn_target': True,
+    'prioritized_buffer_alpha': 0.5,
+    'q_loss_weight': 1,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 64,
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_buffer': False,
+    'save_buffer_id': 0,
+    'save_buffer_interval': 1000,
+    'save_buffer_size': 10000,
+    'save_model': True,
+    'save_model_interval': 200000,
+    'save_replay': False,
+    'seed': 901686993,
+    'soft_update_tau': 0.005,
+    't_max': 2100000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_double_predict': False,
+    'use_emdqn': False,
+    'use_qtotal_td': False,
+    'use_tensorboard': True,
+    'vdn_soft_update': True}
+
+[INFO 05:03:16] my_main saving tb_logs to results/tb_logs/smac_climbreward/3s_vs_5z_medium/EMC_sc2_qmix__2022-04-29_05-03-16
+[INFO 05:03:18] my_main Beginning training for 2100000 timesteps
+[INFO 05:03:18] absl Launching SC2: /home/lych/IJCAI22/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 18276 -dataDir /home/lych/IJCAI22/StarCraftII/ -tempDir /tmp/sc-rm3jjexj/ -eglpath libEGL.so
+[INFO 05:03:18] absl Connecting to: ws://127.0.0.1:18276/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/home/lych/IJCAI22/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 18276 -dataDir /home/lych/IJCAI22/StarCraftII/ -tempDir /tmp/sc-rm3jjexj/ -eglpath libEGL.so'
+Starting up...
+Startup Phase 1 complete
+[INFO 05:03:19] absl Connecting to: ws://127.0.0.1:18276/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so ...
+Successfully loaded EGL library!
+Successfully initialized display on device idx: 0, EGL version: 1.5
+
+Running CGLSimpleDevice::HALInit...
+Calling glGetString: 0x7f7d385e6fe0
+Version: 4.6.0 NVIDIA 460.56
+Vendor: NVIDIA Corporation
+Renderer: GeForce RTX 3070/PCIe/SSE2
+OpenGL initialized!
+Listening on: 127.0.0.1:18276
+Startup Phase 3 complete. Ready for commands.
+[INFO 05:03:20] absl Connecting to: ws://127.0.0.1:18276/sc2api, attempt: 2, running: True
+ConnectHandler: Request from 127.0.0.1:40874 accepted
+ReadyHandler: 127.0.0.1:40874 ready
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Using default stable ids, none found at: /home/lych/IJCAI22/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+[INFO 05:03:24] my_main t_env: 46 / 2100000
+[INFO 05:03:24] my_main Estimated time left: 20 minutes, 12 seconds. Time passed: 5 seconds
+cur_stats {}
+test_stats {}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 1, 'ep_length': 150}
+test_stats {'battle_won': 0, 'n_episodes': 1, 'ep_length': 150}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 2, 'ep_length': 300}
+test_stats {'battle_won': 0, 'n_episodes': 2, 'ep_length': 300}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 3, 'ep_length': 450}
+test_stats {'battle_won': 0, 'n_episodes': 3, 'ep_length': 450}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 4, 'ep_length': 600}
+test_stats {'battle_won': 0, 'n_episodes': 4, 'ep_length': 600}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 5, 'ep_length': 750}
+test_stats {'battle_won': 0, 'n_episodes': 5, 'ep_length': 750}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 6, 'ep_length': 900}
+test_stats {'battle_won': 0, 'n_episodes': 6, 'ep_length': 900}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 7, 'ep_length': 1050}
+test_stats {'battle_won': 0, 'n_episodes': 7, 'ep_length': 1050}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 8, 'ep_length': 1200}
+test_stats {'battle_won': 0, 'n_episodes': 8, 'ep_length': 1200}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 9, 'ep_length': 1350}
+test_stats {'battle_won': 0, 'n_episodes': 9, 'ep_length': 1350}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 10, 'ep_length': 1500}
+test_stats {'battle_won': 0, 'n_episodes': 10, 'ep_length': 1500}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 11, 'ep_length': 1650}
+test_stats {'battle_won': 0, 'n_episodes': 11, 'ep_length': 1650}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 12, 'ep_length': 1800}
+test_stats {'battle_won': 0, 'n_episodes': 12, 'ep_length': 1800}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 13, 'ep_length': 1950}
+test_stats {'battle_won': 0, 'n_episodes': 13, 'ep_length': 1950}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 14, 'ep_length': 2100}
+test_stats {'battle_won': 0, 'n_episodes': 14, 'ep_length': 2100}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 15, 'ep_length': 2250}
+test_stats {'battle_won': 0, 'n_episodes': 15, 'ep_length': 2250}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 16, 'ep_length': 2400}
+test_stats {'battle_won': 0, 'n_episodes': 16, 'ep_length': 2400}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 17, 'ep_length': 2550}
+test_stats {'battle_won': 0, 'n_episodes': 17, 'ep_length': 2550}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 18, 'ep_length': 2700}
+test_stats {'battle_won': 0, 'n_episodes': 18, 'ep_length': 2700}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 19, 'ep_length': 2850}
+test_stats {'battle_won': 0, 'n_episodes': 19, 'ep_length': 2850}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 20, 'ep_length': 3000}
+test_stats {'battle_won': 0, 'n_episodes': 20, 'ep_length': 3000}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 21, 'ep_length': 3150}
+test_stats {'battle_won': 0, 'n_episodes': 21, 'ep_length': 3150}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 22, 'ep_length': 3300}
+test_stats {'battle_won': 0, 'n_episodes': 22, 'ep_length': 3300}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 23, 'ep_length': 3450}
+test_stats {'battle_won': 0, 'n_episodes': 23, 'ep_length': 3450}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 24, 'ep_length': 3600}
+test_stats {'battle_won': 0, 'n_episodes': 24, 'ep_length': 3600}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 25, 'ep_length': 3750}
+test_stats {'battle_won': 0, 'n_episodes': 25, 'ep_length': 3750}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 26, 'ep_length': 3900}
+test_stats {'battle_won': 0, 'n_episodes': 26, 'ep_length': 3900}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 27, 'ep_length': 4050}
+test_stats {'battle_won': 0, 'n_episodes': 27, 'ep_length': 4050}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 28, 'ep_length': 4200}
+test_stats {'battle_won': 0, 'n_episodes': 28, 'ep_length': 4200}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 29, 'ep_length': 4350}
+test_stats {'battle_won': 0, 'n_episodes': 29, 'ep_length': 4350}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 30, 'ep_length': 4500}
+test_stats {'battle_won': 0, 'n_episodes': 30, 'ep_length': 4500}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 31, 'ep_length': 4650}
+test_stats {'battle_won': 0, 'n_episodes': 31, 'ep_length': 4650}
+env_info {'battle_won': False}
+[INFO 05:03:42] my_main Saving models to results/models/EMC_sc2_qmix__2022-04-29_05-03-16/46
+[INFO 05:04:07] my_main Updated target network
+[INFO 05:04:32] my_main Updated target network
+[INFO 05:04:39] my_main Recent Stats | t_env:      10010 | Episode:      464
+battle_won_mean:           0.0000	ep_length_mean:           46.0000	epsilon:                   1.0000	grad_norm:                 1.2006
+hit_prob:                  0.4444	loss:                      0.0627	num_circle:                2.0000	q_taken_mean:              0.0054
+return_mean:               3.1417	return_std:                0.0000	target_mean:               0.0613	td_error_abs:              0.1879
+test_battle_won_mean:      0.0000	test_ep_length_mean:     150.0000	test_return_mean:          0.0000	test_return_std:           0.0000
+
+[INFO 05:04:39] my_main t_env: 10046 / 2100000
+[INFO 05:04:39] my_main Estimated time left: 4 hours, 21 minutes, 50 seconds. Time passed: 1 minutes, 20 seconds
+cur_stats {}
+test_stats {}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 1, 'ep_length': 28}
+test_stats {'battle_won': 0, 'n_episodes': 1, 'ep_length': 28}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 2, 'ep_length': 57}
+test_stats {'battle_won': 0, 'n_episodes': 2, 'ep_length': 57}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 3, 'ep_length': 83}
+test_stats {'battle_won': 0, 'n_episodes': 3, 'ep_length': 83}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 4, 'ep_length': 111}
+test_stats {'battle_won': 0, 'n_episodes': 4, 'ep_length': 111}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 5, 'ep_length': 139}
+test_stats {'battle_won': 0, 'n_episodes': 5, 'ep_length': 139}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 6, 'ep_length': 166}
+test_stats {'battle_won': 0, 'n_episodes': 6, 'ep_length': 166}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 7, 'ep_length': 195}
+test_stats {'battle_won': 0, 'n_episodes': 7, 'ep_length': 195}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 8, 'ep_length': 221}
+test_stats {'battle_won': 0, 'n_episodes': 8, 'ep_length': 221}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 9, 'ep_length': 248}
+test_stats {'battle_won': 0, 'n_episodes': 9, 'ep_length': 248}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 10, 'ep_length': 275}
+test_stats {'battle_won': 0, 'n_episodes': 10, 'ep_length': 275}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 11, 'ep_length': 302}
+test_stats {'battle_won': 0, 'n_episodes': 11, 'ep_length': 302}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 12, 'ep_length': 330}
+test_stats {'battle_won': 0, 'n_episodes': 12, 'ep_length': 330}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 13, 'ep_length': 357}
+test_stats {'battle_won': 0, 'n_episodes': 13, 'ep_length': 357}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 14, 'ep_length': 383}
+test_stats {'battle_won': 0, 'n_episodes': 14, 'ep_length': 383}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 15, 'ep_length': 412}
+test_stats {'battle_won': 0, 'n_episodes': 15, 'ep_length': 412}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 16, 'ep_length': 438}
+test_stats {'battle_won': 0, 'n_episodes': 16, 'ep_length': 438}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 17, 'ep_length': 466}
+test_stats {'battle_won': 0, 'n_episodes': 17, 'ep_length': 466}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 18, 'ep_length': 492}
+test_stats {'battle_won': 0, 'n_episodes': 18, 'ep_length': 492}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 19, 'ep_length': 520}
+test_stats {'battle_won': 0, 'n_episodes': 19, 'ep_length': 520}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 20, 'ep_length': 547}
+test_stats {'battle_won': 0, 'n_episodes': 20, 'ep_length': 547}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 21, 'ep_length': 575}
+test_stats {'battle_won': 0, 'n_episodes': 21, 'ep_length': 575}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 22, 'ep_length': 601}
+test_stats {'battle_won': 0, 'n_episodes': 22, 'ep_length': 601}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 23, 'ep_length': 628}
+test_stats {'battle_won': 0, 'n_episodes': 23, 'ep_length': 628}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 24, 'ep_length': 655}
+test_stats {'battle_won': 0, 'n_episodes': 24, 'ep_length': 655}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 25, 'ep_length': 683}
+test_stats {'battle_won': 0, 'n_episodes': 25, 'ep_length': 683}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 26, 'ep_length': 712}
+test_stats {'battle_won': 0, 'n_episodes': 26, 'ep_length': 712}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 27, 'ep_length': 740}
+test_stats {'battle_won': 0, 'n_episodes': 27, 'ep_length': 740}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 28, 'ep_length': 767}
+test_stats {'battle_won': 0, 'n_episodes': 28, 'ep_length': 767}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 29, 'ep_length': 795}
+test_stats {'battle_won': 0, 'n_episodes': 29, 'ep_length': 795}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 30, 'ep_length': 823}
+test_stats {'battle_won': 0, 'n_episodes': 30, 'ep_length': 823}
+env_info {'battle_won': False}
+cur_stats {'battle_won': 0, 'n_episodes': 31, 'ep_length': 849}
+test_stats {'battle_won': 0, 'n_episodes': 31, 'ep_length': 849}
+env_info {'battle_won': False}

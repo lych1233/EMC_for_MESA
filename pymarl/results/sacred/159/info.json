@@ -1,0 +1,46 @@
+{
+  "ep_length_mean": [
+    1000.0
+  ],
+  "ep_length_mean_T": [
+    1000
+  ],
+  "epsilon": [
+    1.0
+  ],
+  "epsilon_T": [
+    1000
+  ],
+  "num_circle": [
+    2
+  ],
+  "num_circle_T": [
+    1000
+  ],
+  "return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 494.0
+    }
+  ],
+  "return_mean_T": [
+    1000
+  ],
+  "return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_std_T": [
+    1000
+  ],
+  "success_mean": [
+    0.0
+  ],
+  "success_mean_T": [
+    1000
+  ]
+}

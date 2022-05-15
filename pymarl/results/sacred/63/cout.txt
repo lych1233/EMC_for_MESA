@@ -1,0 +1,1383 @@
+[INFO 01:38:24] pymarl Running command 'my_main'
+[INFO 01:38:24] pymarl Started run with ID "63"
+[DEBUG 01:38:24] pymarl Starting Heartbeat
+[DEBUG 01:38:24] my_main Started
+[INFO 01:38:24] my_main Experiment Parameters:
+[INFO 01:38:24] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn_fast',
+    'agent_output_type': 'q',
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'buffer_cpu_only': False,
+    'buffer_size': 5000,
+    'burn_in_period': 32,
+    'checkpoint_path': '',
+    'critic_lr': 0.0005,
+    'curiosity_decay': True,
+    'curiosity_decay_cycle': 5000,
+    'curiosity_decay_rate': 0.9,
+    'curiosity_decay_stop': 0.01,
+    'curiosity_scale': 0.2,
+    'double_q': True,
+    'emdqn_buffer_size': 1000000,
+    'emdqn_latent_dim': 4,
+    'emdqn_loss_weight': 0.001,
+    'env': 'naive',
+    'env_args': {   'episode_length': 5,
+                    'map_name': 'multi_step_10',
+                    'num_agents': 2,
+                    'scenario_name': 'multi_step_10',
+                    'seed': 1},
+    'epsilon_anneal_time': 50000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.9,
+    'grad_norm_clip': 10,
+    'is_batch_rl': False,
+    'is_from_start': True,
+    'is_prioritized_buffer': True,
+    'is_save_buffer': False,
+    'joint_random_policy_eps': 0.0,
+    'label': 'default_label',
+    'learner': 'fast_QLearner',
+    'learner_log_interval': 1000,
+    'load_buffer_id': 0,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 1000,
+    'lr': 0.0005,
+    'mac': 'sep_fast_mac',
+    'mixer': 'vdn',
+    'name': 'EMC_naive',
+    'num_circle': 1,
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'predict_vdn_target': True,
+    'prioritized_buffer_alpha': 0.5,
+    'q_loss_weight': 1,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 64,
+    'runner': 'episode',
+    'runner_log_interval': 1000,
+    'save_buffer': False,
+    'save_buffer_cycle': 500,
+    'save_buffer_id': 0,
+    'save_buffer_interval': 1000,
+    'save_buffer_path': './results/heatmap/heatmap_buffer_0816/',
+    'save_buffer_size': 10000,
+    'save_model': False,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 1,
+    'soft_update_tau': 0.005,
+    't_max': 100000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 1000,
+    'test_nepisode': 10,
+    'use_cuda': True,
+    'use_double_predict': False,
+    'use_emdqn': False,
+    'use_qtotal_td': False,
+    'use_tensorboard': True,
+    'vdn_soft_update': True,
+    'wandb_project': 'naive'}
+
+[INFO 01:38:24] my_main saving tb_logs to results/tb_logs/naive/multi_step_10/EMC_naive__2022-04-11_01-38-24
+[INFO 01:38:25] my_main Beginning training for 100000 timesteps
+/home/lych/IJCAI22/EMC/pymarl/src/components/episode_buffer.py:105: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)
+[INFO 01:38:25] my_main t_env: 5 / 100000
+[INFO 01:38:25] my_main Estimated time left: 2 seconds. Time passed: 0 seconds
+[INFO 01:38:34] my_main Recent Stats | t_env:       1000 | Episode:      200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.2000
+ep_length_mean:            5.0000	epsilon:                   1.0000	extrinsic rewards:         0.4094	grad_norm:                 1.8812
+hit_prob:                  0.1000	loss:                      1.9209	num_circle:                1.0000	q_taken_mean:             -0.0037
+return_mean:               2.5000	return_std:                0.0000	success_mean:              0.0000	target_mean:               0.6732
+td_error_abs:              1.3540	test_ep_length_mean:       5.0000	test_return_mean:          1.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4094	vdn grad_norm:             0.9478	vdn hit_prob:              0.1000
+vdn intrinsic rewards:     0.6700	vdn loss:                  0.5585	vdn prediction loss:       3.3502	vdn q_taken_mean:         -0.0037
+vdn target_mean:           0.3382	vdn td_error_abs:          0.6907	
+[INFO 01:38:34] my_main Updated target network
+[INFO 01:38:34] my_main Updated target network
+[INFO 01:38:34] my_main t_env: 1005 / 100000
+[INFO 01:38:34] my_main Estimated time left: 14 minutes, 20 seconds. Time passed: 8 seconds
+[INFO 01:38:44] my_main Recent Stats | t_env:       2000 | Episode:      400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.2000
+ep_length_mean:            5.0000	epsilon:                   0.9810	extrinsic rewards:         0.4031	grad_norm:                 0.9883
+hit_prob:                  0.1031	loss:                      0.9789	num_circle:                1.0000	q_taken_mean:              0.2494
+return_mean:               2.2575	return_std:                0.2486	success_mean:              0.0025	target_mean:               0.5879
+td_error_abs:              0.7401	test_ep_length_mean:       5.0000	test_return_mean:          2.0000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4031	vdn grad_norm:             0.5186	vdn hit_prob:              0.0984
+vdn intrinsic rewards:     0.4074	vdn loss:                  0.2961	vdn prediction loss:       2.0370	vdn q_taken_mean:          0.1980
+vdn target_mean:           0.3696	vdn td_error_abs:          0.4016	
+[INFO 01:38:44] my_main Updated target network
+[INFO 01:38:44] my_main Updated target network
+[INFO 01:38:44] my_main t_env: 2005 / 100000
+[INFO 01:38:44] my_main Estimated time left: 15 minutes, 34 seconds. Time passed: 18 seconds
+[INFO 01:38:53] my_main Recent Stats | t_env:       3000 | Episode:      600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.2000
+ep_length_mean:            5.0000	epsilon:                   0.9620	extrinsic rewards:         0.4156	grad_norm:                 0.6963
+hit_prob:                  0.1083	loss:                      0.6635	num_circle:                1.0000	q_taken_mean:              0.3964
+return_mean:               2.2058	return_std:                0.3179	success_mean:              0.0083	target_mean:               0.6201
+td_error_abs:              0.5276	test_ep_length_mean:       5.0000	test_return_mean:          2.1667	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4156	vdn grad_norm:             0.3763	vdn hit_prob:              0.0979
+vdn intrinsic rewards:     0.3082	vdn loss:                  0.2084	vdn prediction loss:       1.5412	vdn q_taken_mean:          0.3225
+vdn target_mean:           0.4372	vdn td_error_abs:          0.3024	
+[INFO 01:38:53] my_main Updated target network
+[INFO 01:38:53] my_main Updated target network
+[INFO 01:38:53] my_main t_env: 3005 / 100000
+[INFO 01:38:53] my_main Estimated time left: 15 minutes, 24 seconds. Time passed: 27 seconds
+[INFO 01:39:03] my_main Recent Stats | t_env:       4000 | Episode:      800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.2000
+ep_length_mean:            5.0000	epsilon:                   0.9430	extrinsic rewards:         0.4117	grad_norm:                 0.5505
+hit_prob:                  0.1055	loss:                      0.5053	num_circle:                1.0000	q_taken_mean:              0.4863
+return_mean:               2.1719	return_std:                0.3557	success_mean:              0.0100	target_mean:               0.6557
+td_error_abs:              0.4231	test_ep_length_mean:       5.0000	test_return_mean:          2.2500	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4117	vdn grad_norm:             0.3112	vdn hit_prob:              0.1000
+vdn intrinsic rewards:     0.2570	vdn loss:                  0.1642	vdn prediction loss:       1.2852	vdn q_taken_mean:          0.4027
+vdn target_mean:           0.4916	vdn td_error_abs:          0.2553	
+[INFO 01:39:03] my_main Updated target network
+[INFO 01:39:03] my_main Updated target network
+[INFO 01:39:03] my_main t_env: 4005 / 100000
+[INFO 01:39:03] my_main Estimated time left: 15 minutes, 6 seconds. Time passed: 37 seconds
+[INFO 01:39:12] my_main Recent Stats | t_env:       5000 | Episode:     1000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.2000
+ep_length_mean:            5.0000	epsilon:                   0.9240	extrinsic rewards:         0.4188	grad_norm:                 0.4801
+hit_prob:                  0.1106	loss:                      0.4123	num_circle:                1.0000	q_taken_mean:              0.5559
+return_mean:               2.1545	return_std:                0.3724	success_mean:              0.0080	target_mean:               0.6909
+td_error_abs:              0.3627	test_ep_length_mean:       5.0000	test_return_mean:          2.3000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4188	vdn grad_norm:             0.2839	vdn hit_prob:              0.1050
+vdn intrinsic rewards:     0.2257	vdn loss:                  0.1390	vdn prediction loss:       1.1287	vdn q_taken_mean:          0.4654
+vdn target_mean:           0.5363	vdn td_error_abs:          0.2268	
+[INFO 01:39:12] my_main Updated target network
+[INFO 01:39:12] my_main Updated target network
+[INFO 01:39:12] my_main t_env: 5005 / 100000
+[INFO 01:39:12] my_main Estimated time left: 15 minutes, 11 seconds. Time passed: 46 seconds
+[INFO 01:39:22] my_main Recent Stats | t_env:       6000 | Episode:     1200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1960
+ep_length_mean:            5.0000	epsilon:                   0.9050	extrinsic rewards:         0.4175	grad_norm:                 0.1333
+hit_prob:                  0.1100	loss:                      0.0362	num_circle:                1.0000	q_taken_mean:              0.7150
+return_mean:               2.0760	return_std:                0.4650	success_mean:              0.0120	target_mean:               0.7143
+td_error_abs:              0.1158	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4175	vdn grad_norm:             0.1228	vdn hit_prob:              0.1050
+vdn intrinsic rewards:     0.1073	vdn loss:                  0.0354	vdn prediction loss:       0.5452	vdn q_taken_mean:          0.6046
+vdn target_mean:           0.6067	vdn td_error_abs:          0.1125	
+[INFO 01:39:22] my_main Updated target network
+[INFO 01:39:22] my_main Updated target network
+[INFO 01:39:22] my_main t_env: 6005 / 100000
+[INFO 01:39:22] my_main Estimated time left: 14 minutes, 58 seconds. Time passed: 56 seconds
+[INFO 01:39:31] my_main Recent Stats | t_env:       7000 | Episode:     1400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1920
+ep_length_mean:            5.0000	epsilon:                   0.8860	extrinsic rewards:         0.4194	grad_norm:                 0.1393
+hit_prob:                  0.1075	loss:                      0.0334	num_circle:                1.0000	q_taken_mean:              0.7665
+return_mean:               2.0885	return_std:                0.4522	success_mean:              0.0120	target_mean:               0.7652
+td_error_abs:              0.1098	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4194	vdn grad_norm:             0.1259	vdn hit_prob:              0.1013
+vdn intrinsic rewards:     0.0918	vdn loss:                  0.0329	vdn prediction loss:       0.4751	vdn q_taken_mean:          0.6592
+vdn target_mean:           0.6604	vdn td_error_abs:          0.1091	
+[INFO 01:39:31] my_main Updated target network
+[INFO 01:39:31] my_main Updated target network
+[INFO 01:39:31] my_main t_env: 7005 / 100000
+[INFO 01:39:31] my_main Estimated time left: 15 minutes, 3 seconds. Time passed: 1 minutes, 6 seconds
+[INFO 01:39:41] my_main Recent Stats | t_env:       8000 | Episode:     1600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1880
+ep_length_mean:            5.0000	epsilon:                   0.8670	extrinsic rewards:         0.4125	grad_norm:                 0.1639
+hit_prob:                  0.1012	loss:                      0.0367	num_circle:                1.0000	q_taken_mean:              0.7718
+return_mean:               2.0985	return_std:                0.4436	success_mean:              0.0110	target_mean:               0.7758
+td_error_abs:              0.1150	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4125	vdn grad_norm:             0.1509	vdn hit_prob:              0.0981
+vdn intrinsic rewards:     0.0803	vdn loss:                  0.0366	vdn prediction loss:       0.4233	vdn q_taken_mean:          0.6734
+vdn target_mean:           0.6784	vdn td_error_abs:          0.1150	
+[INFO 01:39:41] my_main Updated target network
+[INFO 01:39:41] my_main Updated target network
+[INFO 01:39:41] my_main t_env: 8005 / 100000
+[INFO 01:39:41] my_main Estimated time left: 14 minutes, 58 seconds. Time passed: 1 minutes, 15 seconds
+[INFO 01:39:51] my_main Recent Stats | t_env:       9000 | Episode:     1800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1840
+ep_length_mean:            5.0000	epsilon:                   0.8480	extrinsic rewards:         0.4088	grad_norm:                 0.1730
+hit_prob:                  0.1000	loss:                      0.0363	num_circle:                1.0000	q_taken_mean:              0.7663
+return_mean:               2.1135	return_std:                0.4378	success_mean:              0.0110	target_mean:               0.7665
+td_error_abs:              0.1142	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4088	vdn grad_norm:             0.1557	vdn hit_prob:              0.0912
+vdn intrinsic rewards:     0.0682	vdn loss:                  0.0356	vdn prediction loss:       0.3676	vdn q_taken_mean:          0.6786
+vdn target_mean:           0.6792	vdn td_error_abs:          0.1124	
+[INFO 01:39:51] my_main Updated target network
+[INFO 01:39:51] my_main Updated target network
+[INFO 01:39:51] my_main t_env: 9005 / 100000
+[INFO 01:39:51] my_main Estimated time left: 14 minutes, 34 seconds. Time passed: 1 minutes, 25 seconds
+[INFO 01:40:00] my_main Recent Stats | t_env:      10000 | Episode:     2000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1800
+ep_length_mean:            5.0000	epsilon:                   0.8290	extrinsic rewards:         0.4019	grad_norm:                 0.1622
+hit_prob:                  0.0938	loss:                      0.0364	num_circle:                1.0000	q_taken_mean:              0.7432
+return_mean:               2.1230	return_std:                0.4303	success_mean:              0.0120	target_mean:               0.7460
+td_error_abs:              0.1133	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4019	vdn grad_norm:             0.1459	vdn hit_prob:              0.0806
+vdn intrinsic rewards:     0.0558	vdn loss:                  0.0361	vdn prediction loss:       0.3101	vdn q_taken_mean:          0.6699
+vdn target_mean:           0.6722	vdn td_error_abs:          0.1129	
+[INFO 01:40:00] my_main Updated target network
+[INFO 01:40:00] my_main Updated target network
+[INFO 01:40:00] my_main t_env: 10005 / 100000
+[INFO 01:40:00] my_main Estimated time left: 14 minutes, 25 seconds. Time passed: 1 minutes, 35 seconds
+[INFO 01:40:10] my_main Recent Stats | t_env:      11000 | Episode:     2200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1764
+ep_length_mean:            5.0000	epsilon:                   0.8100	extrinsic rewards:         0.4006	grad_norm:                 0.1791
+hit_prob:                  0.0975	loss:                      0.0399	num_circle:                1.0000	q_taken_mean:              0.7222
+return_mean:               2.1215	return_std:                0.4225	success_mean:              0.0090	target_mean:               0.7302
+td_error_abs:              0.1193	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4006	vdn grad_norm:             0.1598	vdn hit_prob:              0.0856
+vdn intrinsic rewards:     0.0464	vdn loss:                  0.0396	vdn prediction loss:       0.2614	vdn q_taken_mean:          0.6611
+vdn target_mean:           0.6684	vdn td_error_abs:          0.1190	
+[INFO 01:40:10] my_main Updated target network
+[INFO 01:40:10] my_main Updated target network
+[INFO 01:40:10] my_main t_env: 11005 / 100000
+[INFO 01:40:10] my_main Estimated time left: 14 minutes, 12 seconds. Time passed: 1 minutes, 44 seconds
+[INFO 01:40:20] my_main Recent Stats | t_env:      12000 | Episode:     2400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1728
+ep_length_mean:            5.0000	epsilon:                   0.7910	extrinsic rewards:         0.4006	grad_norm:                 0.1854
+hit_prob:                  0.1031	loss:                      0.0421	num_circle:                1.0000	q_taken_mean:              0.7050
+return_mean:               2.1390	return_std:                0.4159	success_mean:              0.0090	target_mean:               0.7100
+td_error_abs:              0.1224	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4006	vdn grad_norm:             0.1704	vdn hit_prob:              0.0944
+vdn intrinsic rewards:     0.0383	vdn loss:                  0.0423	vdn prediction loss:       0.2200	vdn q_taken_mean:          0.6547
+vdn target_mean:           0.6588	vdn td_error_abs:          0.1223	
+[INFO 01:40:20] my_main Updated target network
+[INFO 01:40:20] my_main Updated target network
+[INFO 01:40:20] my_main t_env: 12005 / 100000
+[INFO 01:40:20] my_main Estimated time left: 14 minutes, 4 seconds. Time passed: 1 minutes, 54 seconds
+[INFO 01:40:29] my_main Recent Stats | t_env:      13000 | Episode:     2600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1692
+ep_length_mean:            5.0000	epsilon:                   0.7720	extrinsic rewards:         0.4031	grad_norm:                 0.1582
+hit_prob:                  0.1088	loss:                      0.0405	num_circle:                1.0000	q_taken_mean:              0.6905
+return_mean:               2.1350	return_std:                0.4091	success_mean:              0.0070	target_mean:               0.6924
+td_error_abs:              0.1197	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4031	vdn grad_norm:             0.1452	vdn hit_prob:              0.1050
+vdn intrinsic rewards:     0.0329	vdn loss:                  0.0404	vdn prediction loss:       0.1932	vdn q_taken_mean:          0.6486
+vdn target_mean:           0.6493	vdn td_error_abs:          0.1187	
+[INFO 01:40:29] my_main Updated target network
+[INFO 01:40:29] my_main Updated target network
+[INFO 01:40:29] my_main t_env: 13005 / 100000
+[INFO 01:40:29] my_main Estimated time left: 13 minutes, 48 seconds. Time passed: 2 minutes, 3 seconds
+[INFO 01:40:39] my_main Recent Stats | t_env:      14000 | Episode:     2800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1656
+ep_length_mean:            5.0000	epsilon:                   0.7530	extrinsic rewards:         0.4081	grad_norm:                 0.1601
+hit_prob:                  0.1138	loss:                      0.0433	num_circle:                1.0000	q_taken_mean:              0.6800
+return_mean:               2.1440	return_std:                0.3956	success_mean:              0.0070	target_mean:               0.6815
+td_error_abs:              0.1216	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4081	vdn grad_norm:             0.1473	vdn hit_prob:              0.1100
+vdn intrinsic rewards:     0.0288	vdn loss:                  0.0434	vdn prediction loss:       0.1732	vdn q_taken_mean:          0.6437
+vdn target_mean:           0.6440	vdn td_error_abs:          0.1219	
+[INFO 01:40:39] my_main Updated target network
+[INFO 01:40:39] my_main Updated target network
+[INFO 01:40:39] my_main t_env: 14005 / 100000
+[INFO 01:40:39] my_main Estimated time left: 13 minutes, 52 seconds. Time passed: 2 minutes, 13 seconds
+[INFO 01:40:48] my_main Recent Stats | t_env:      15000 | Episode:     3000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1620
+ep_length_mean:            5.0000	epsilon:                   0.7340	extrinsic rewards:         0.4138	grad_norm:                 0.1666
+hit_prob:                  0.1094	loss:                      0.0431	num_circle:                1.0000	q_taken_mean:              0.6749
+return_mean:               2.1580	return_std:                0.3960	success_mean:              0.0080	target_mean:               0.6752
+td_error_abs:              0.1191	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4138	vdn grad_norm:             0.1560	vdn hit_prob:              0.1100
+vdn intrinsic rewards:     0.0255	vdn loss:                  0.0431	vdn prediction loss:       0.1574	vdn q_taken_mean:          0.6421
+vdn target_mean:           0.6420	vdn td_error_abs:          0.1192	
+[INFO 01:40:48] my_main Updated target network
+[INFO 01:40:48] my_main Updated target network
+[INFO 01:40:48] my_main t_env: 15005 / 100000
+[INFO 01:40:48] my_main Estimated time left: 13 minutes, 39 seconds. Time passed: 2 minutes, 23 seconds
+[INFO 01:40:58] my_main Recent Stats | t_env:      16000 | Episode:     3200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1588
+ep_length_mean:            5.0000	epsilon:                   0.7150	extrinsic rewards:         0.4169	grad_norm:                 0.1447
+hit_prob:                  0.1194	loss:                      0.0399	num_circle:                1.0000	q_taken_mean:              0.6751
+return_mean:               2.1785	return_std:                0.3899	success_mean:              0.0080	target_mean:               0.6705
+td_error_abs:              0.1125	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4169	vdn grad_norm:             0.1370	vdn hit_prob:              0.1156
+vdn intrinsic rewards:     0.0235	vdn loss:                  0.0398	vdn prediction loss:       0.1479	vdn q_taken_mean:          0.6449
+vdn target_mean:           0.6400	vdn td_error_abs:          0.1122	
+[INFO 01:40:58] my_main Updated target network
+[INFO 01:40:58] my_main Updated target network
+[INFO 01:40:58] my_main t_env: 16005 / 100000
+[INFO 01:40:58] my_main Estimated time left: 13 minutes, 24 seconds. Time passed: 2 minutes, 32 seconds
+[INFO 01:41:08] my_main Recent Stats | t_env:      17000 | Episode:     3400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1555
+ep_length_mean:            5.0000	epsilon:                   0.6960	extrinsic rewards:         0.4181	grad_norm:                 0.1356
+hit_prob:                  0.1213	loss:                      0.0411	num_circle:                1.0000	q_taken_mean:              0.6764
+return_mean:               2.1860	return_std:                0.3893	success_mean:              0.0080	target_mean:               0.6750
+td_error_abs:              0.1107	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4181	vdn grad_norm:             0.1262	vdn hit_prob:              0.1156
+vdn intrinsic rewards:     0.0219	vdn loss:                  0.0408	vdn prediction loss:       0.1404	vdn q_taken_mean:          0.6473
+vdn target_mean:           0.6458	vdn td_error_abs:          0.1101	
+[INFO 01:41:08] my_main Updated target network
+[INFO 01:41:08] my_main Updated target network
+[INFO 01:41:08] my_main t_env: 17005 / 100000
+[INFO 01:41:08] my_main Estimated time left: 13 minutes, 15 seconds. Time passed: 2 minutes, 42 seconds
+[INFO 01:41:17] my_main Recent Stats | t_env:      18000 | Episode:     3600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1523
+ep_length_mean:            5.0000	epsilon:                   0.6770	extrinsic rewards:         0.4181	grad_norm:                 0.1473
+hit_prob:                  0.1206	loss:                      0.0407	num_circle:                1.0000	q_taken_mean:              0.6790
+return_mean:               2.1940	return_std:                0.3919	success_mean:              0.0080	target_mean:               0.6790
+td_error_abs:              0.1104	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4181	vdn grad_norm:             0.1404	vdn hit_prob:              0.1138
+vdn intrinsic rewards:     0.0203	vdn loss:                  0.0400	vdn prediction loss:       0.1328	vdn q_taken_mean:          0.6504
+vdn target_mean:           0.6512	vdn td_error_abs:          0.1100	
+[INFO 01:41:17] my_main Updated target network
+[INFO 01:41:17] my_main Updated target network
+[INFO 01:41:17] my_main t_env: 18005 / 100000
+[INFO 01:41:17] my_main Estimated time left: 13 minutes, 3 seconds. Time passed: 2 minutes, 51 seconds
+[INFO 01:41:27] my_main Recent Stats | t_env:      19000 | Episode:     3800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1490
+ep_length_mean:            5.0000	epsilon:                   0.6580	extrinsic rewards:         0.4206	grad_norm:                 0.1388
+hit_prob:                  0.1181	loss:                      0.0389	num_circle:                1.0000	q_taken_mean:              0.6762
+return_mean:               2.1935	return_std:                0.3938	success_mean:              0.0060	target_mean:               0.6784
+td_error_abs:              0.1075	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4206	vdn grad_norm:             0.1336	vdn hit_prob:              0.1169
+vdn intrinsic rewards:     0.0194	vdn loss:                  0.0384	vdn prediction loss:       0.1302	vdn q_taken_mean:          0.6491
+vdn target_mean:           0.6514	vdn td_error_abs:          0.1065	
+[INFO 01:41:27] my_main Updated target network
+[INFO 01:41:27] my_main Updated target network
+[INFO 01:41:27] my_main t_env: 19005 / 100000
+[INFO 01:41:27] my_main Estimated time left: 12 minutes, 59 seconds. Time passed: 3 minutes, 1 seconds
+[INFO 01:41:36] my_main Recent Stats | t_env:      20000 | Episode:     4000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1458
+ep_length_mean:            5.0000	epsilon:                   0.6390	extrinsic rewards:         0.4125	grad_norm:                 0.1266
+hit_prob:                  0.1200	loss:                      0.0367	num_circle:                1.0000	q_taken_mean:              0.6632
+return_mean:               2.1855	return_std:                0.3899	success_mean:              0.0040	target_mean:               0.6663
+td_error_abs:              0.1080	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4125	vdn grad_norm:             0.1226	vdn hit_prob:              0.1231
+vdn intrinsic rewards:     0.0184	vdn loss:                  0.0362	vdn prediction loss:       0.1260	vdn q_taken_mean:          0.6366
+vdn target_mean:           0.6397	vdn td_error_abs:          0.1069	
+[INFO 01:41:36] my_main Updated target network
+[INFO 01:41:36] my_main Updated target network
+[INFO 01:41:36] my_main t_env: 20005 / 100000
+[INFO 01:41:36] my_main Estimated time left: 12 minutes, 47 seconds. Time passed: 3 minutes, 11 seconds
+[INFO 01:41:46] my_main Recent Stats | t_env:      21000 | Episode:     4200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1429
+ep_length_mean:            5.0000	epsilon:                   0.6200	extrinsic rewards:         0.4138	grad_norm:                 0.1197
+hit_prob:                  0.1169	loss:                      0.0338	num_circle:                1.0000	q_taken_mean:              0.6556
+return_mean:               2.1830	return_std:                0.3815	success_mean:              0.0050	target_mean:               0.6578
+td_error_abs:              0.1020	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4138	vdn grad_norm:             0.1147	vdn hit_prob:              0.1156
+vdn intrinsic rewards:     0.0174	vdn loss:                  0.0333	vdn prediction loss:       0.1218	vdn q_taken_mean:          0.6298
+vdn target_mean:           0.6321	vdn td_error_abs:          0.1007	
+[INFO 01:41:46] my_main Updated target network
+[INFO 01:41:46] my_main Updated target network
+[INFO 01:41:46] my_main t_env: 21005 / 100000
+[INFO 01:41:46] my_main Estimated time left: 12 minutes, 35 seconds. Time passed: 3 minutes, 20 seconds
+[INFO 01:41:55] my_main Recent Stats | t_env:      22000 | Episode:     4400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1400
+ep_length_mean:            5.0000	epsilon:                   0.6010	extrinsic rewards:         0.4106	grad_norm:                 0.1233
+hit_prob:                  0.1050	loss:                      0.0321	num_circle:                1.0000	q_taken_mean:              0.6508
+return_mean:               2.1820	return_std:                0.3782	success_mean:              0.0060	target_mean:               0.6509
+td_error_abs:              0.1008	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4106	vdn grad_norm:             0.1198	vdn hit_prob:              0.1087
+vdn intrinsic rewards:     0.0165	vdn loss:                  0.0317	vdn prediction loss:       0.1178	vdn q_taken_mean:          0.6266
+vdn target_mean:           0.6269	vdn td_error_abs:          0.0994	
+[INFO 01:41:55] my_main Updated target network
+[INFO 01:41:55] my_main Updated target network
+[INFO 01:41:55] my_main t_env: 22005 / 100000
+[INFO 01:41:55] my_main Estimated time left: 12 minutes, 19 seconds. Time passed: 3 minutes, 30 seconds
+[INFO 01:42:05] my_main Recent Stats | t_env:      23000 | Episode:     4600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1371
+ep_length_mean:            5.0000	epsilon:                   0.5820	extrinsic rewards:         0.4094	grad_norm:                 0.1145
+hit_prob:                  0.1050	loss:                      0.0316	num_circle:                1.0000	q_taken_mean:              0.6517
+return_mean:               2.1930	return_std:                0.3710	success_mean:              0.0050	target_mean:               0.6500
+td_error_abs:              0.0994	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4094	vdn grad_norm:             0.1093	vdn hit_prob:              0.1031
+vdn intrinsic rewards:     0.0157	vdn loss:                  0.0312	vdn prediction loss:       0.1145	vdn q_taken_mean:          0.6284
+vdn target_mean:           0.6272	vdn td_error_abs:          0.0979	
+[INFO 01:42:05] my_main Updated target network
+[INFO 01:42:05] my_main Updated target network
+[INFO 01:42:05] my_main t_env: 23005 / 100000
+[INFO 01:42:05] my_main Estimated time left: 12 minutes, 19 seconds. Time passed: 3 minutes, 39 seconds
+[INFO 01:42:15] my_main Recent Stats | t_env:      24000 | Episode:     4800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1341
+ep_length_mean:            5.0000	epsilon:                   0.5630	extrinsic rewards:         0.4100	grad_norm:                 0.1113
+hit_prob:                  0.1156	loss:                      0.0284	num_circle:                1.0000	q_taken_mean:              0.6509
+return_mean:               2.2020	return_std:                0.3666	success_mean:              0.0040	target_mean:               0.6488
+td_error_abs:              0.0950	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4100	vdn grad_norm:             0.1069	vdn hit_prob:              0.1100
+vdn intrinsic rewards:     0.0149	vdn loss:                  0.0279	vdn prediction loss:       0.1113	vdn q_taken_mean:          0.6300
+vdn target_mean:           0.6289	vdn td_error_abs:          0.0937	
+[INFO 01:42:15] my_main Updated target network
+[INFO 01:42:15] my_main Updated target network
+[INFO 01:42:15] my_main t_env: 24005 / 100000
+[INFO 01:42:15] my_main Estimated time left: 12 minutes, 11 seconds. Time passed: 3 minutes, 49 seconds
+[INFO 01:42:24] my_main Recent Stats | t_env:      25000 | Episode:     5000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1312
+ep_length_mean:            5.0000	epsilon:                   0.5440	extrinsic rewards:         0.4106	grad_norm:                 0.1030
+hit_prob:                  0.1263	loss:                      0.0320	num_circle:                1.0000	q_taken_mean:              0.6539
+return_mean:               2.2065	return_std:                0.3674	success_mean:              0.0040	target_mean:               0.6489
+td_error_abs:              0.0977	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4106	vdn grad_norm:             0.0989	vdn hit_prob:              0.1162
+vdn intrinsic rewards:     0.0143	vdn loss:                  0.0313	vdn prediction loss:       0.1092	vdn q_taken_mean:          0.6357
+vdn target_mean:           0.6314	vdn td_error_abs:          0.0963	
+[INFO 01:42:24] my_main Updated target network
+[INFO 01:42:24] my_main Updated target network
+[INFO 01:42:24] my_main t_env: 25005 / 100000
+[INFO 01:42:24] my_main Estimated time left: 11 minutes, 58 seconds. Time passed: 3 minutes, 58 seconds
+[INFO 01:42:34] my_main Recent Stats | t_env:      26000 | Episode:     5200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1286
+ep_length_mean:            5.0000	epsilon:                   0.5250	extrinsic rewards:         0.4081	grad_norm:                 0.1108
+hit_prob:                  0.1194	loss:                      0.0332	num_circle:                1.0000	q_taken_mean:              0.6503
+return_mean:               2.2250	return_std:                0.3600	success_mean:              0.0060	target_mean:               0.6460
+td_error_abs:              0.1000	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4081	vdn grad_norm:             0.1076	vdn hit_prob:              0.1125
+vdn intrinsic rewards:     0.0136	vdn loss:                  0.0327	vdn prediction loss:       0.1061	vdn q_taken_mean:          0.6340
+vdn target_mean:           0.6296	vdn td_error_abs:          0.0990	
+[INFO 01:42:34] my_main Updated target network
+[INFO 01:42:34] my_main Updated target network
+[INFO 01:42:34] my_main t_env: 26005 / 100000
+[INFO 01:42:34] my_main Estimated time left: 11 minutes, 49 seconds. Time passed: 4 minutes, 8 seconds
+[INFO 01:42:43] my_main Recent Stats | t_env:      27000 | Episode:     5400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1260
+ep_length_mean:            5.0000	epsilon:                   0.5060	extrinsic rewards:         0.4156	grad_norm:                 0.1086
+hit_prob:                  0.1369	loss:                      0.0335	num_circle:                1.0000	q_taken_mean:              0.6447
+return_mean:               2.2310	return_std:                0.3565	success_mean:              0.0040	target_mean:               0.6444
+td_error_abs:              0.1016	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4156	vdn grad_norm:             0.1049	vdn hit_prob:              0.1262
+vdn intrinsic rewards:     0.0132	vdn loss:                  0.0327	vdn prediction loss:       0.1045	vdn q_taken_mean:          0.6296
+vdn target_mean:           0.6296	vdn td_error_abs:          0.1006	
+[INFO 01:42:43] my_main Updated target network
+[INFO 01:42:43] my_main Updated target network
+[INFO 01:42:43] my_main t_env: 27005 / 100000
+[INFO 01:42:43] my_main Estimated time left: 11 minutes, 37 seconds. Time passed: 4 minutes, 18 seconds
+[INFO 01:42:53] my_main Recent Stats | t_env:      28000 | Episode:     5600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1233
+ep_length_mean:            5.0000	epsilon:                   0.4870	extrinsic rewards:         0.4150	grad_norm:                 0.1074
+hit_prob:                  0.1356	loss:                      0.0344	num_circle:                1.0000	q_taken_mean:              0.6392
+return_mean:               2.2445	return_std:                0.3502	success_mean:              0.0050	target_mean:               0.6372
+td_error_abs:              0.1024	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4150	vdn grad_norm:             0.1041	vdn hit_prob:              0.1325
+vdn intrinsic rewards:     0.0129	vdn loss:                  0.0337	vdn prediction loss:       0.1048	vdn q_taken_mean:          0.6260
+vdn target_mean:           0.6229	vdn td_error_abs:          0.1007	
+[INFO 01:42:53] my_main Updated target network
+[INFO 01:42:53] my_main Updated target network
+[INFO 01:42:53] my_main t_env: 28005 / 100000
+[INFO 01:42:53] my_main Estimated time left: 11 minutes, 33 seconds. Time passed: 4 minutes, 27 seconds
+[INFO 01:43:03] my_main Recent Stats | t_env:      29000 | Episode:     5800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1207
+ep_length_mean:            5.0000	epsilon:                   0.4680	extrinsic rewards:         0.4106	grad_norm:                 0.1057
+hit_prob:                  0.1269	loss:                      0.0365	num_circle:                1.0000	q_taken_mean:              0.6313
+return_mean:               2.2480	return_std:                0.3489	success_mean:              0.0070	target_mean:               0.6323
+td_error_abs:              0.1082	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4106	vdn grad_norm:             0.1012	vdn hit_prob:              0.1237
+vdn intrinsic rewards:     0.0125	vdn loss:                  0.0360	vdn prediction loss:       0.1033	vdn q_taken_mean:          0.6167
+vdn target_mean:           0.6162	vdn td_error_abs:          0.1063	
+[INFO 01:43:03] my_main Updated target network
+[INFO 01:43:03] my_main Updated target network
+[INFO 01:43:03] my_main t_env: 29005 / 100000
+[INFO 01:43:03] my_main Estimated time left: 11 minutes, 21 seconds. Time passed: 4 minutes, 37 seconds
+[INFO 01:43:12] my_main Recent Stats | t_env:      30000 | Episode:     6000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1181
+ep_length_mean:            5.0000	epsilon:                   0.4490	extrinsic rewards:         0.4119	grad_norm:                 0.1218
+hit_prob:                  0.1244	loss:                      0.0365	num_circle:                1.0000	q_taken_mean:              0.6248
+return_mean:               2.2655	return_std:                0.3411	success_mean:              0.0070	target_mean:               0.6288
+td_error_abs:              0.1082	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4119	vdn grad_norm:             0.1189	vdn hit_prob:              0.1244
+vdn intrinsic rewards:     0.0122	vdn loss:                  0.0366	vdn prediction loss:       0.1030	vdn q_taken_mean:          0.6106
+vdn target_mean:           0.6134	vdn td_error_abs:          0.1068	
+[INFO 01:43:12] my_main Updated target network
+[INFO 01:43:12] my_main Updated target network
+[INFO 01:43:12] my_main t_env: 30005 / 100000
+[INFO 01:43:12] my_main Estimated time left: 11 minutes, 9 seconds. Time passed: 4 minutes, 46 seconds
+[INFO 01:43:22] my_main Recent Stats | t_env:      31000 | Episode:     6200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1157
+ep_length_mean:            5.0000	epsilon:                   0.4300	extrinsic rewards:         0.4113	grad_norm:                 0.1281
+hit_prob:                  0.1262	loss:                      0.0380	num_circle:                1.0000	q_taken_mean:              0.6230
+return_mean:               2.2625	return_std:                0.3421	success_mean:              0.0030	target_mean:               0.6267
+td_error_abs:              0.1126	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4113	vdn grad_norm:             0.1243	vdn hit_prob:              0.1287
+vdn intrinsic rewards:     0.0119	vdn loss:                  0.0381	vdn prediction loss:       0.1026	vdn q_taken_mean:          0.6090
+vdn target_mean:           0.6119	vdn td_error_abs:          0.1112	
+[INFO 01:43:22] my_main Updated target network
+[INFO 01:43:22] my_main Updated target network
+[INFO 01:43:22] my_main t_env: 31005 / 100000
+[INFO 01:43:22] my_main Estimated time left: 10 minutes, 56 seconds. Time passed: 4 minutes, 56 seconds
+[INFO 01:43:31] my_main Recent Stats | t_env:      32000 | Episode:     6400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1134
+ep_length_mean:            5.0000	epsilon:                   0.4110	extrinsic rewards:         0.4012	grad_norm:                 0.1593
+hit_prob:                  0.1331	loss:                      0.0381	num_circle:                1.0000	q_taken_mean:              0.6284
+return_mean:               2.2755	return_std:                0.3313	success_mean:              0.0030	target_mean:               0.6218
+td_error_abs:              0.1145	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4012	vdn grad_norm:             0.1505	vdn hit_prob:              0.1331
+vdn intrinsic rewards:     0.0119	vdn loss:                  0.0378	vdn prediction loss:       0.1055	vdn q_taken_mean:          0.6139
+vdn target_mean:           0.6072	vdn td_error_abs:          0.1122	
+[INFO 01:43:31] my_main Updated target network
+[INFO 01:43:31] my_main Updated target network
+[INFO 01:43:31] my_main t_env: 32005 / 100000
+[INFO 01:43:31] my_main Estimated time left: 10 minutes, 51 seconds. Time passed: 5 minutes, 5 seconds
+[INFO 01:43:41] my_main Recent Stats | t_env:      33000 | Episode:     6600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1110
+ep_length_mean:            5.0000	epsilon:                   0.3920	extrinsic rewards:         0.4012	grad_norm:                 0.1518
+hit_prob:                  0.1400	loss:                      0.0368	num_circle:                1.0000	q_taken_mean:              0.6261
+return_mean:               2.2780	return_std:                0.3325	success_mean:              0.0020	target_mean:               0.6196
+td_error_abs:              0.1103	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4012	vdn grad_norm:             0.1437	vdn hit_prob:              0.1356
+vdn intrinsic rewards:     0.0119	vdn loss:                  0.0369	vdn prediction loss:       0.1074	vdn q_taken_mean:          0.6125
+vdn target_mean:           0.6070	vdn td_error_abs:          0.1091	
+[INFO 01:43:41] my_main Updated target network
+[INFO 01:43:41] my_main Updated target network
+[INFO 01:43:41] my_main t_env: 33005 / 100000
+[INFO 01:43:41] my_main Estimated time left: 10 minutes, 42 seconds. Time passed: 5 minutes, 15 seconds
+[INFO 01:43:50] my_main Recent Stats | t_env:      34000 | Episode:     6800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1087
+ep_length_mean:            5.0000	epsilon:                   0.3730	extrinsic rewards:         0.4050	grad_norm:                 0.1423
+hit_prob:                  0.1375	loss:                      0.0357	num_circle:                1.0000	q_taken_mean:              0.6281
+return_mean:               2.2985	return_std:                0.3199	success_mean:              0.0010	target_mean:               0.6196
+td_error_abs:              0.1040	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4050	vdn grad_norm:             0.1364	vdn hit_prob:              0.1312
+vdn intrinsic rewards:     0.0118	vdn loss:                  0.0359	vdn prediction loss:       0.1085	vdn q_taken_mean:          0.6156
+vdn target_mean:           0.6086	vdn td_error_abs:          0.1036	
+[INFO 01:43:50] my_main Updated target network
+[INFO 01:43:50] my_main Updated target network
+[INFO 01:43:50] my_main t_env: 34005 / 100000
+[INFO 01:43:50] my_main Estimated time left: 10 minutes, 32 seconds. Time passed: 5 minutes, 25 seconds
+[INFO 01:44:00] my_main Recent Stats | t_env:      35000 | Episode:     7000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1063
+ep_length_mean:            5.0000	epsilon:                   0.3540	extrinsic rewards:         0.4094	grad_norm:                 0.1293
+hit_prob:                  0.1456	loss:                      0.0316	num_circle:                1.0000	q_taken_mean:              0.6338
+return_mean:               2.3100	return_std:                0.3120	success_mean:              0.0010	target_mean:               0.6226
+td_error_abs:              0.0968	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4094	vdn grad_norm:             0.1216	vdn hit_prob:              0.1300
+vdn intrinsic rewards:     0.0116	vdn loss:                  0.0312	vdn prediction loss:       0.1094	vdn q_taken_mean:          0.6218
+vdn target_mean:           0.6117	vdn td_error_abs:          0.0955	
+[INFO 01:44:00] my_main Updated target network
+[INFO 01:44:00] my_main Updated target network
+[INFO 01:44:00] my_main t_env: 35005 / 100000
+[INFO 01:44:00] my_main Estimated time left: 10 minutes, 29 seconds. Time passed: 5 minutes, 34 seconds
+[INFO 01:44:10] my_main Recent Stats | t_env:      36000 | Episode:     7200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1042
+ep_length_mean:            5.0000	epsilon:                   0.3350	extrinsic rewards:         0.4156	grad_norm:                 0.1157
+hit_prob:                  0.1569	loss:                      0.0278	num_circle:                1.0000	q_taken_mean:              0.6357
+return_mean:               2.3170	return_std:                0.3072	success_mean:              0.0010	target_mean:               0.6260
+td_error_abs:              0.0874	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4156	vdn grad_norm:             0.1083	vdn hit_prob:              0.1387
+vdn intrinsic rewards:     0.0115	vdn loss:                  0.0272	vdn prediction loss:       0.1108	vdn q_taken_mean:          0.6233
+vdn target_mean:           0.6147	vdn td_error_abs:          0.0858	
+[INFO 01:44:10] my_main Updated target network
+[INFO 01:44:10] my_main Updated target network
+[INFO 01:44:10] my_main t_env: 36005 / 100000
+[INFO 01:44:10] my_main Estimated time left: 10 minutes, 10 seconds. Time passed: 5 minutes, 44 seconds
+[INFO 01:44:19] my_main Recent Stats | t_env:      37000 | Episode:     7400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.1020
+ep_length_mean:            5.0000	epsilon:                   0.3160	extrinsic rewards:         0.4194	grad_norm:                 0.0905
+hit_prob:                  0.1538	loss:                      0.0241	num_circle:                1.0000	q_taken_mean:              0.6330
+return_mean:               2.3350	return_std:                0.2922	success_mean:              0.0010	target_mean:               0.6280
+td_error_abs:              0.0793	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4194	vdn grad_norm:             0.0853	vdn hit_prob:              0.1350
+vdn intrinsic rewards:     0.0113	vdn loss:                  0.0240	vdn prediction loss:       0.1109	vdn q_taken_mean:          0.6206
+vdn target_mean:           0.6164	vdn td_error_abs:          0.0787	
+[INFO 01:44:19] my_main Updated target network
+[INFO 01:44:19] my_main Updated target network
+[INFO 01:44:19] my_main t_env: 37005 / 100000
+[INFO 01:44:19] my_main Estimated time left: 10 minutes, 6 seconds. Time passed: 5 minutes, 53 seconds
+[INFO 01:44:29] my_main Recent Stats | t_env:      38000 | Episode:     7600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0999
+ep_length_mean:            5.0000	epsilon:                   0.2970	extrinsic rewards:         0.4275	grad_norm:                 0.0923
+hit_prob:                  0.1619	loss:                      0.0231	num_circle:                1.0000	q_taken_mean:              0.6433
+return_mean:               2.3420	return_std:                0.2823	success_mean:              0.0030	target_mean:               0.6378
+td_error_abs:              0.0777	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4275	vdn grad_norm:             0.0874	vdn hit_prob:              0.1425
+vdn intrinsic rewards:     0.0112	vdn loss:                  0.0228	vdn prediction loss:       0.1119	vdn q_taken_mean:          0.6308
+vdn target_mean:           0.6255	vdn td_error_abs:          0.0767	
+[INFO 01:44:29] my_main Updated target network
+[INFO 01:44:29] my_main Updated target network
+[INFO 01:44:29] my_main t_env: 38005 / 100000
+[INFO 01:44:29] my_main Estimated time left: 9 minutes, 56 seconds. Time passed: 6 minutes, 3 seconds
+[INFO 01:44:39] my_main Recent Stats | t_env:      39000 | Episode:     7800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0978
+ep_length_mean:            5.0000	epsilon:                   0.2780	extrinsic rewards:         0.4263	grad_norm:                 0.0997
+hit_prob:                  0.1750	loss:                      0.0221	num_circle:                1.0000	q_taken_mean:              0.6491
+return_mean:               2.3395	return_std:                0.2796	success_mean:              0.0020	target_mean:               0.6419
+td_error_abs:              0.0774	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4263	vdn grad_norm:             0.0965	vdn hit_prob:              0.1581
+vdn intrinsic rewards:     0.0112	vdn loss:                  0.0217	vdn prediction loss:       0.1146	vdn q_taken_mean:          0.6375
+vdn target_mean:           0.6295	vdn td_error_abs:          0.0757	
+[INFO 01:44:39] my_main Updated target network
+[INFO 01:44:39] my_main Updated target network
+[INFO 01:44:39] my_main t_env: 39005 / 100000
+[INFO 01:44:39] my_main Estimated time left: 9 minutes, 48 seconds. Time passed: 6 minutes, 13 seconds
+[INFO 01:44:48] my_main Recent Stats | t_env:      40000 | Episode:     8000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0957
+ep_length_mean:            5.0000	epsilon:                   0.2590	extrinsic rewards:         0.4263	grad_norm:                 0.1001
+hit_prob:                  0.1694	loss:                      0.0205	num_circle:                1.0000	q_taken_mean:              0.6481
+return_mean:               2.3555	return_std:                0.2632	success_mean:              0.0020	target_mean:               0.6430
+td_error_abs:              0.0750	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4263	vdn grad_norm:             0.0982	vdn hit_prob:              0.1562
+vdn intrinsic rewards:     0.0114	vdn loss:                  0.0204	vdn prediction loss:       0.1187	vdn q_taken_mean:          0.6367
+vdn target_mean:           0.6309	vdn td_error_abs:          0.0747	
+[INFO 01:44:48] my_main Updated target network
+[INFO 01:44:48] my_main Updated target network
+[INFO 01:44:48] my_main t_env: 40005 / 100000
+[INFO 01:44:48] my_main Estimated time left: 9 minutes, 30 seconds. Time passed: 6 minutes, 22 seconds
+[INFO 01:44:58] my_main Recent Stats | t_env:      41000 | Episode:     8200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0937
+ep_length_mean:            5.0000	epsilon:                   0.2400	extrinsic rewards:         0.4244	grad_norm:                 0.0979
+hit_prob:                  0.1575	loss:                      0.0195	num_circle:                1.0000	q_taken_mean:              0.6500
+return_mean:               2.3720	return_std:                0.2485	success_mean:              0.0020	target_mean:               0.6452
+td_error_abs:              0.0755	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4244	vdn grad_norm:             0.0981	vdn hit_prob:              0.1525
+vdn intrinsic rewards:     0.0112	vdn loss:                  0.0195	vdn prediction loss:       0.1198	vdn q_taken_mean:          0.6394
+vdn target_mean:           0.6347	vdn td_error_abs:          0.0760	
+[INFO 01:44:58] my_main Updated target network
+[INFO 01:44:58] my_main Updated target network
+[INFO 01:44:58] my_main t_env: 41005 / 100000
+[INFO 01:44:58] my_main Estimated time left: 9 minutes, 27 seconds. Time passed: 6 minutes, 32 seconds
+[INFO 01:45:07] my_main Recent Stats | t_env:      42000 | Episode:     8400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0918
+ep_length_mean:            5.0000	epsilon:                   0.2210	extrinsic rewards:         0.4238	grad_norm:                 0.0947
+hit_prob:                  0.1500	loss:                      0.0216	num_circle:                1.0000	q_taken_mean:              0.6551
+return_mean:               2.3700	return_std:                0.2496	success_mean:              0.0020	target_mean:               0.6505
+td_error_abs:              0.0776	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4238	vdn grad_norm:             0.0974	vdn hit_prob:              0.1462
+vdn intrinsic rewards:     0.0112	vdn loss:                  0.0215	vdn prediction loss:       0.1214	vdn q_taken_mean:          0.6449
+vdn target_mean:           0.6402	vdn td_error_abs:          0.0785	
+[INFO 01:45:07] my_main Updated target network
+[INFO 01:45:07] my_main Updated target network
+[INFO 01:45:07] my_main t_env: 42005 / 100000
+[INFO 01:45:07] my_main Estimated time left: 9 minutes, 18 seconds. Time passed: 6 minutes, 41 seconds
+[INFO 01:45:17] my_main Recent Stats | t_env:      43000 | Episode:     8600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0899
+ep_length_mean:            5.0000	epsilon:                   0.2020	extrinsic rewards:         0.4219	grad_norm:                 0.0952
+hit_prob:                  0.1463	loss:                      0.0196	num_circle:                1.0000	q_taken_mean:              0.6524
+return_mean:               2.3795	return_std:                0.2405	success_mean:              0.0000	target_mean:               0.6511
+td_error_abs:              0.0742	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4219	vdn grad_norm:             0.0972	vdn hit_prob:              0.1419
+vdn intrinsic rewards:     0.0111	vdn loss:                  0.0195	vdn prediction loss:       0.1240	vdn q_taken_mean:          0.6415
+vdn target_mean:           0.6406	vdn td_error_abs:          0.0753	
+[INFO 01:45:17] my_main Updated target network
+[INFO 01:45:17] my_main Updated target network
+[INFO 01:45:17] my_main t_env: 43005 / 100000
+[INFO 01:45:17] my_main Estimated time left: 9 minutes, 7 seconds. Time passed: 6 minutes, 51 seconds
+[INFO 01:45:27] my_main Recent Stats | t_env:      44000 | Episode:     8800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0880
+ep_length_mean:            5.0000	epsilon:                   0.1830	extrinsic rewards:         0.4281	grad_norm:                 0.0961
+hit_prob:                  0.1456	loss:                      0.0218	num_circle:                1.0000	q_taken_mean:              0.6533
+return_mean:               2.3845	return_std:                0.2357	success_mean:              0.0000	target_mean:               0.6560
+td_error_abs:              0.0748	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4281	vdn grad_norm:             0.0943	vdn hit_prob:              0.1419
+vdn intrinsic rewards:     0.0114	vdn loss:                  0.0214	vdn prediction loss:       0.1291	vdn q_taken_mean:          0.6420
+vdn target_mean:           0.6447	vdn td_error_abs:          0.0755	
+[INFO 01:45:27] my_main Updated target network
+[INFO 01:45:27] my_main Updated target network
+[INFO 01:45:27] my_main t_env: 44005 / 100000
+[INFO 01:45:27] my_main Estimated time left: 8 minutes, 59 seconds. Time passed: 7 minutes, 1 seconds
+[INFO 01:45:36] my_main Recent Stats | t_env:      45000 | Episode:     9000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0861
+ep_length_mean:            5.0000	epsilon:                   0.1640	extrinsic rewards:         0.4269	grad_norm:                 0.0934
+hit_prob:                  0.1444	loss:                      0.0214	num_circle:                1.0000	q_taken_mean:              0.6575
+return_mean:               2.3900	return_std:                0.2232	success_mean:              0.0000	target_mean:               0.6589
+td_error_abs:              0.0735	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4269	vdn grad_norm:             0.0912	vdn hit_prob:              0.1419
+vdn intrinsic rewards:     0.0114	vdn loss:                  0.0210	vdn prediction loss:       0.1324	vdn q_taken_mean:          0.6445
+vdn target_mean:           0.6461	vdn td_error_abs:          0.0740	
+[INFO 01:45:36] my_main Updated target network
+[INFO 01:45:36] my_main Updated target network
+[INFO 01:45:36] my_main t_env: 45005 / 100000
+[INFO 01:45:36] my_main Estimated time left: 8 minutes, 44 seconds. Time passed: 7 minutes, 10 seconds
+[INFO 01:45:46] my_main Recent Stats | t_env:      46000 | Episode:     9200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0844
+ep_length_mean:            5.0000	epsilon:                   0.1450	extrinsic rewards:         0.4287	grad_norm:                 0.0928
+hit_prob:                  0.1531	loss:                      0.0195	num_circle:                1.0000	q_taken_mean:              0.6602
+return_mean:               2.3970	return_std:                0.2181	success_mean:              0.0000	target_mean:               0.6614
+td_error_abs:              0.0711	test_ep_length_mean:       5.0000	test_return_mean:          2.4000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4287	vdn grad_norm:             0.0886	vdn hit_prob:              0.1431
+vdn intrinsic rewards:     0.0116	vdn loss:                  0.0194	vdn prediction loss:       0.1375	vdn q_taken_mean:          0.6467
+vdn target_mean:           0.6473	vdn td_error_abs:          0.0716	
+[INFO 01:45:46] my_main Updated target network
+[INFO 01:45:46] my_main Updated target network
+[INFO 01:45:46] my_main t_env: 46005 / 100000
+[INFO 01:45:46] my_main Estimated time left: 8 minutes, 40 seconds. Time passed: 7 minutes, 20 seconds
+[INFO 01:45:55] my_main Recent Stats | t_env:      47000 | Episode:     9400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0826
+ep_length_mean:            5.0000	epsilon:                   0.1260	extrinsic rewards:         0.4344	grad_norm:                 0.0820
+hit_prob:                  0.1581	loss:                      0.0192	num_circle:                1.0000	q_taken_mean:              0.6571
+return_mean:               2.4065	return_std:                0.2131	success_mean:              0.0000	target_mean:               0.6615
+td_error_abs:              0.0700	test_ep_length_mean:       5.0000	test_return_mean:          2.4000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4344	vdn grad_norm:             0.0777	vdn hit_prob:              0.1481
+vdn intrinsic rewards:     0.0117	vdn loss:                  0.0191	vdn prediction loss:       0.1422	vdn q_taken_mean:          0.6437
+vdn target_mean:           0.6474	vdn td_error_abs:          0.0695	
+[INFO 01:45:55] my_main Updated target network
+[INFO 01:45:55] my_main Updated target network
+[INFO 01:45:55] my_main t_env: 47005 / 100000
+[INFO 01:45:55] my_main Estimated time left: 8 minutes, 29 seconds. Time passed: 7 minutes, 30 seconds
+[INFO 01:46:05] my_main Recent Stats | t_env:      48000 | Episode:     9600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0809
+ep_length_mean:            5.0000	epsilon:                   0.1070	extrinsic rewards:         0.4337	grad_norm:                 0.0811
+hit_prob:                  0.1606	loss:                      0.0182	num_circle:                1.0000	q_taken_mean:              0.6568
+return_mean:               2.4180	return_std:                0.1983	success_mean:              0.0000	target_mean:               0.6582
+td_error_abs:              0.0689	test_ep_length_mean:       5.0000	test_return_mean:          2.4000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4337	vdn grad_norm:             0.0771	vdn hit_prob:              0.1456
+vdn intrinsic rewards:     0.0119	vdn loss:                  0.0183	vdn prediction loss:       0.1476	vdn q_taken_mean:          0.6441
+vdn target_mean:           0.6448	vdn td_error_abs:          0.0684	
+[INFO 01:46:05] my_main Updated target network
+[INFO 01:46:05] my_main Updated target network
+[INFO 01:46:05] my_main t_env: 48005 / 100000
+[INFO 01:46:05] my_main Estimated time left: 8 minutes, 23 seconds. Time passed: 7 minutes, 39 seconds
+[INFO 01:46:15] my_main Recent Stats | t_env:      49000 | Episode:     9800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0792
+ep_length_mean:            5.0000	epsilon:                   0.0880	extrinsic rewards:         0.4388	grad_norm:                 0.0833
+hit_prob:                  0.1606	loss:                      0.0162	num_circle:                1.0000	q_taken_mean:              0.6582
+return_mean:               2.4365	return_std:                0.1754	success_mean:              0.0000	target_mean:               0.6564
+td_error_abs:              0.0652	test_ep_length_mean:       5.0000	test_return_mean:          2.4000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4388	vdn grad_norm:             0.0832	vdn hit_prob:              0.1431
+vdn intrinsic rewards:     0.0117	vdn loss:                  0.0162	vdn prediction loss:       0.1482	vdn q_taken_mean:          0.6473
+vdn target_mean:           0.6448	vdn td_error_abs:          0.0655	
+[INFO 01:46:15] my_main Updated target network
+[INFO 01:46:15] my_main Updated target network
+[INFO 01:46:15] my_main t_env: 49005 / 100000
+[INFO 01:46:15] my_main Estimated time left: 8 minutes, 5 seconds. Time passed: 7 minutes, 49 seconds
+[INFO 01:46:24] my_main Recent Stats | t_env:      50000 | Episode:    10000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0775
+ep_length_mean:            5.0000	epsilon:                   0.0690	extrinsic rewards:         0.4456	grad_norm:                 0.0871
+hit_prob:                  0.1775	loss:                      0.0152	num_circle:                1.0000	q_taken_mean:              0.6634
+return_mean:               2.4420	return_std:                0.1679	success_mean:              0.0000	target_mean:               0.6588
+td_error_abs:              0.0630	test_ep_length_mean:       5.0000	test_return_mean:          2.4000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4456	vdn grad_norm:             0.0851	vdn hit_prob:              0.1506
+vdn intrinsic rewards:     0.0117	vdn loss:                  0.0149	vdn prediction loss:       0.1511	vdn q_taken_mean:          0.6541
+vdn target_mean:           0.6488	vdn td_error_abs:          0.0624	
+[INFO 01:46:24] my_main Updated target network
+[INFO 01:46:24] my_main Updated target network
+[INFO 01:46:24] my_main t_env: 50005 / 100000
+[INFO 01:46:24] my_main Estimated time left: 8 minutes, 1 seconds. Time passed: 7 minutes, 58 seconds
+[INFO 01:46:34] my_main Recent Stats | t_env:      51000 | Episode:    10200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0759
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4475	grad_norm:                 0.0902
+hit_prob:                  0.1794	loss:                      0.0151	num_circle:                1.0000	q_taken_mean:              0.6601
+return_mean:               2.4510	return_std:                0.1560	success_mean:              0.0000	target_mean:               0.6555
+td_error_abs:              0.0622	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4475	vdn grad_norm:             0.0892	vdn hit_prob:              0.1494
+vdn intrinsic rewards:     0.0116	vdn loss:                  0.0148	vdn prediction loss:       0.1532	vdn q_taken_mean:          0.6517
+vdn target_mean:           0.6464	vdn td_error_abs:          0.0611	
+[INFO 01:46:34] my_main Updated target network
+[INFO 01:46:34] my_main Updated target network
+[INFO 01:46:34] my_main t_env: 51005 / 100000
+[INFO 01:46:34] my_main Estimated time left: 7 minutes, 51 seconds. Time passed: 8 minutes, 8 seconds
+[INFO 01:46:43] my_main Recent Stats | t_env:      52000 | Episode:    10400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0744
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4544	grad_norm:                 0.1039
+hit_prob:                  0.1787	loss:                      0.0174	num_circle:                1.0000	q_taken_mean:              0.6588
+return_mean:               2.4625	return_std:                0.1338	success_mean:              0.0000	target_mean:               0.6581
+td_error_abs:              0.0631	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4544	vdn grad_norm:             0.1040	vdn hit_prob:              0.1481
+vdn intrinsic rewards:     0.0116	vdn loss:                  0.0171	vdn prediction loss:       0.1561	vdn q_taken_mean:          0.6524
+vdn target_mean:           0.6505	vdn td_error_abs:          0.0620	
+[INFO 01:46:43] my_main Updated target network
+[INFO 01:46:43] my_main Updated target network
+[INFO 01:46:43] my_main t_env: 52005 / 100000
+[INFO 01:46:43] my_main Estimated time left: 7 minutes, 41 seconds. Time passed: 8 minutes, 18 seconds
+[INFO 01:46:53] my_main Recent Stats | t_env:      53000 | Episode:    10600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0728
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4606	grad_norm:                 0.1023
+hit_prob:                  0.1712	loss:                      0.0177	num_circle:                1.0000	q_taken_mean:              0.6597
+return_mean:               2.4680	return_std:                0.1255	success_mean:              0.0000	target_mean:               0.6607
+td_error_abs:              0.0615	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4606	vdn grad_norm:             0.1018	vdn hit_prob:              0.1400
+vdn intrinsic rewards:     0.0113	vdn loss:                  0.0172	vdn prediction loss:       0.1552	vdn q_taken_mean:          0.6539
+vdn target_mean:           0.6536	vdn td_error_abs:          0.0601	
+[INFO 01:46:53] my_main Updated target network
+[INFO 01:46:53] my_main Updated target network
+[INFO 01:46:53] my_main t_env: 53005 / 100000
+[INFO 01:46:53] my_main Estimated time left: 7 minutes, 32 seconds. Time passed: 8 minutes, 27 seconds
+[INFO 01:47:03] my_main Recent Stats | t_env:      54000 | Episode:    10800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0713
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4600	grad_norm:                 0.0950
+hit_prob:                  0.1719	loss:                      0.0166	num_circle:                1.0000	q_taken_mean:              0.6598
+return_mean:               2.4725	return_std:                0.1172	success_mean:              0.0000	target_mean:               0.6626
+td_error_abs:              0.0597	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4600	vdn grad_norm:             0.0914	vdn hit_prob:              0.1400
+vdn intrinsic rewards:     0.0111	vdn loss:                  0.0162	vdn prediction loss:       0.1559	vdn q_taken_mean:          0.6523
+vdn target_mean:           0.6548	vdn td_error_abs:          0.0575	
+[INFO 01:47:03] my_main Updated target network
+[INFO 01:47:03] my_main Updated target network
+[INFO 01:47:03] my_main t_env: 54005 / 100000
+[INFO 01:47:03] my_main Estimated time left: 7 minutes, 19 seconds. Time passed: 8 minutes, 37 seconds
+[INFO 01:47:12] my_main Recent Stats | t_env:      55000 | Episode:    11000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0697
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4588	grad_norm:                 0.0887
+hit_prob:                  0.1556	loss:                      0.0176	num_circle:                1.0000	q_taken_mean:              0.6568
+return_mean:               2.4710	return_std:                0.1230	success_mean:              0.0000	target_mean:               0.6622
+td_error_abs:              0.0588	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4588	vdn grad_norm:             0.0865	vdn hit_prob:              0.1350
+vdn intrinsic rewards:     0.0108	vdn loss:                  0.0172	vdn prediction loss:       0.1544	vdn q_taken_mean:          0.6492
+vdn target_mean:           0.6544	vdn td_error_abs:          0.0574	
+[INFO 01:47:12] my_main Updated target network
+[INFO 01:47:12] my_main Updated target network
+[INFO 01:47:12] my_main t_env: 55005 / 100000
+[INFO 01:47:12] my_main Estimated time left: 7 minutes, 11 seconds. Time passed: 8 minutes, 46 seconds
+[INFO 01:47:22] my_main Recent Stats | t_env:      56000 | Episode:    11200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0683
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4631	grad_norm:                 0.0873
+hit_prob:                  0.1575	loss:                      0.0168	num_circle:                1.0000	q_taken_mean:              0.6647
+return_mean:               2.4750	return_std:                0.1126	success_mean:              0.0000	target_mean:               0.6663
+td_error_abs:              0.0543	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4631	vdn grad_norm:             0.0864	vdn hit_prob:              0.1400
+vdn intrinsic rewards:     0.0104	vdn loss:                  0.0164	vdn prediction loss:       0.1518	vdn q_taken_mean:          0.6573
+vdn target_mean:           0.6589	vdn td_error_abs:          0.0535	
+[INFO 01:47:22] my_main Updated target network
+[INFO 01:47:22] my_main Updated target network
+[INFO 01:47:22] my_main t_env: 56005 / 100000
+[INFO 01:47:22] my_main Estimated time left: 7 minutes, 2 seconds. Time passed: 8 minutes, 56 seconds
+[INFO 01:47:31] my_main Recent Stats | t_env:      57000 | Episode:    11400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0669
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4619	grad_norm:                 0.0682
+hit_prob:                  0.1638	loss:                      0.0108	num_circle:                1.0000	q_taken_mean:              0.6661
+return_mean:               2.4730	return_std:                0.1166	success_mean:              0.0000	target_mean:               0.6648
+td_error_abs:              0.0455	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4619	vdn grad_norm:             0.0682	vdn hit_prob:              0.1325
+vdn intrinsic rewards:     0.0100	vdn loss:                  0.0105	vdn prediction loss:       0.1485	vdn q_taken_mean:          0.6601
+vdn target_mean:           0.6590	vdn td_error_abs:          0.0451	
+[INFO 01:47:31] my_main Updated target network
+[INFO 01:47:31] my_main Updated target network
+[INFO 01:47:31] my_main t_env: 57005 / 100000
+[INFO 01:47:31] my_main Estimated time left: 6 minutes, 54 seconds. Time passed: 9 minutes, 6 seconds
+[INFO 01:47:41] my_main Recent Stats | t_env:      58000 | Episode:    11600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0656
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4612	grad_norm:                 0.0662
+hit_prob:                  0.1688	loss:                      0.0095	num_circle:                1.0000	q_taken_mean:              0.6633
+return_mean:               2.4700	return_std:                0.1215	success_mean:              0.0000	target_mean:               0.6628
+td_error_abs:              0.0442	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4612	vdn grad_norm:             0.0657	vdn hit_prob:              0.1375
+vdn intrinsic rewards:     0.0095	vdn loss:                  0.0093	vdn prediction loss:       0.1439	vdn q_taken_mean:          0.6596
+vdn target_mean:           0.6584	vdn td_error_abs:          0.0433	
+[INFO 01:47:41] my_main Updated target network
+[INFO 01:47:41] my_main Updated target network
+[INFO 01:47:41] my_main t_env: 58005 / 100000
+[INFO 01:47:41] my_main Estimated time left: 6 minutes, 43 seconds. Time passed: 9 minutes, 15 seconds
+[INFO 01:47:51] my_main Recent Stats | t_env:      59000 | Episode:    11800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0642
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4631	grad_norm:                 0.0629
+hit_prob:                  0.1806	loss:                      0.0079	num_circle:                1.0000	q_taken_mean:              0.6635
+return_mean:               2.4700	return_std:                0.1215	success_mean:              0.0000	target_mean:               0.6610
+td_error_abs:              0.0403	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4631	vdn grad_norm:             0.0651	vdn hit_prob:              0.1325
+vdn intrinsic rewards:     0.0091	vdn loss:                  0.0084	vdn prediction loss:       0.1412	vdn q_taken_mean:          0.6616
+vdn target_mean:           0.6586	vdn td_error_abs:          0.0410	
+[INFO 01:47:51] my_main Updated target network
+[INFO 01:47:51] my_main Updated target network
+[INFO 01:47:51] my_main t_env: 59005 / 100000
+[INFO 01:47:51] my_main Estimated time left: 6 minutes, 34 seconds. Time passed: 9 minutes, 25 seconds
+[INFO 01:48:00] my_main Recent Stats | t_env:      60000 | Episode:    12000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0628
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4675	grad_norm:                 0.0551
+hit_prob:                  0.1931	loss:                      0.0052	num_circle:                1.0000	q_taken_mean:              0.6623
+return_mean:               2.4730	return_std:                0.1130	success_mean:              0.0000	target_mean:               0.6602
+td_error_abs:              0.0353	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4675	vdn grad_norm:             0.0597	vdn hit_prob:              0.1344
+vdn intrinsic rewards:     0.0085	vdn loss:                  0.0057	vdn prediction loss:       0.1348	vdn q_taken_mean:          0.6625
+vdn target_mean:           0.6586	vdn td_error_abs:          0.0359	
+[INFO 01:48:00] my_main Updated target network
+[INFO 01:48:00] my_main Updated target network
+[INFO 01:48:00] my_main t_env: 60005 / 100000
+[INFO 01:48:00] my_main Estimated time left: 6 minutes, 26 seconds. Time passed: 9 minutes, 34 seconds
+[INFO 01:48:10] my_main Recent Stats | t_env:      61000 | Episode:    12200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0615
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4694	grad_norm:                 0.0443
+hit_prob:                  0.1975	loss:                      0.0048	num_circle:                1.0000	q_taken_mean:              0.6588
+return_mean:               2.4715	return_std:                0.1167	success_mean:              0.0000	target_mean:               0.6590
+td_error_abs:              0.0323	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4694	vdn grad_norm:             0.0483	vdn hit_prob:              0.1281
+vdn intrinsic rewards:     0.0080	vdn loss:                  0.0052	vdn prediction loss:       0.1291	vdn q_taken_mean:          0.6585
+vdn target_mean:           0.6582	vdn td_error_abs:          0.0326	
+[INFO 01:48:10] my_main Updated target network
+[INFO 01:48:10] my_main Updated target network
+[INFO 01:48:10] my_main t_env: 61005 / 100000
+[INFO 01:48:10] my_main Estimated time left: 6 minutes, 15 seconds. Time passed: 9 minutes, 44 seconds
+[INFO 01:48:20] my_main Recent Stats | t_env:      62000 | Episode:    12400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0603
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4744	grad_norm:                 0.0505
+hit_prob:                  0.1925	loss:                      0.0068	num_circle:                1.0000	q_taken_mean:              0.6635
+return_mean:               2.4730	return_std:                0.1138	success_mean:              0.0000	target_mean:               0.6627
+td_error_abs:              0.0320	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4744	vdn grad_norm:             0.0539	vdn hit_prob:              0.1375
+vdn intrinsic rewards:     0.0075	vdn loss:                  0.0074	vdn prediction loss:       0.1235	vdn q_taken_mean:          0.6604
+vdn target_mean:           0.6602	vdn td_error_abs:          0.0321	
+[INFO 01:48:20] my_main Updated target network
+[INFO 01:48:20] my_main Updated target network
+[INFO 01:48:20] my_main t_env: 62005 / 100000
+[INFO 01:48:20] my_main Estimated time left: 6 minutes, 6 seconds. Time passed: 9 minutes, 54 seconds
+[INFO 01:48:29] my_main Recent Stats | t_env:      63000 | Episode:    12600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0590
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4762	grad_norm:                 0.0497
+hit_prob:                  0.2056	loss:                      0.0051	num_circle:                1.0000	q_taken_mean:              0.6688
+return_mean:               2.4725	return_std:                0.1128	success_mean:              0.0000	target_mean:               0.6643
+td_error_abs:              0.0284	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4762	vdn grad_norm:             0.0513	vdn hit_prob:              0.1481
+vdn intrinsic rewards:     0.0070	vdn loss:                  0.0056	vdn prediction loss:       0.1182	vdn q_taken_mean:          0.6632
+vdn target_mean:           0.6609	vdn td_error_abs:          0.0282	
+[INFO 01:48:29] my_main Updated target network
+[INFO 01:48:29] my_main Updated target network
+[INFO 01:48:29] my_main t_env: 63005 / 100000
+[INFO 01:48:29] my_main Estimated time left: 5 minutes, 54 seconds. Time passed: 10 minutes, 3 seconds
+[INFO 01:48:39] my_main Recent Stats | t_env:      64000 | Episode:    12800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0577
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4781	grad_norm:                 0.0487
+hit_prob:                  0.2025	loss:                      0.0044	num_circle:                1.0000	q_taken_mean:              0.6677
+return_mean:               2.4710	return_std:                0.1160	success_mean:              0.0000	target_mean:               0.6631
+td_error_abs:              0.0266	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4781	vdn grad_norm:             0.0479	vdn hit_prob:              0.1550
+vdn intrinsic rewards:     0.0063	vdn loss:                  0.0045	vdn prediction loss:       0.1094	vdn q_taken_mean:          0.6614
+vdn target_mean:           0.6591	vdn td_error_abs:          0.0251	
+[INFO 01:48:39] my_main Updated target network
+[INFO 01:48:39] my_main Updated target network
+[INFO 01:48:39] my_main t_env: 64005 / 100000
+[INFO 01:48:39] my_main Estimated time left: 5 minutes, 48 seconds. Time passed: 10 minutes, 13 seconds
+[INFO 01:48:48] my_main Recent Stats | t_env:      65000 | Episode:    13000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0565
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4806	grad_norm:                 0.0475
+hit_prob:                  0.2012	loss:                      0.0042	num_circle:                1.0000	q_taken_mean:              0.6662
+return_mean:               2.4750	return_std:                0.1054	success_mean:              0.0000	target_mean:               0.6621
+td_error_abs:              0.0252	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4806	vdn grad_norm:             0.0442	vdn hit_prob:              0.1563
+vdn intrinsic rewards:     0.0058	vdn loss:                  0.0042	vdn prediction loss:       0.1027	vdn q_taken_mean:          0.6591
+vdn target_mean:           0.6580	vdn td_error_abs:          0.0231	
+[INFO 01:48:48] my_main Updated target network
+[INFO 01:48:48] my_main Updated target network
+[INFO 01:48:48] my_main t_env: 65005 / 100000
+[INFO 01:48:48] my_main Estimated time left: 5 minutes, 36 seconds. Time passed: 10 minutes, 23 seconds
+[INFO 01:48:58] my_main Recent Stats | t_env:      66000 | Episode:    13200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0554
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4825	grad_norm:                 0.0451
+hit_prob:                  0.1938	loss:                      0.0038	num_circle:                1.0000	q_taken_mean:              0.6685
+return_mean:               2.4750	return_std:                0.1054	success_mean:              0.0000	target_mean:               0.6643
+td_error_abs:              0.0234	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4825	vdn grad_norm:             0.0451	vdn hit_prob:              0.1519
+vdn intrinsic rewards:     0.0054	vdn loss:                  0.0039	vdn prediction loss:       0.0968	vdn q_taken_mean:          0.6628
+vdn target_mean:           0.6597	vdn td_error_abs:          0.0218	
+[INFO 01:48:58] my_main Updated target network
+[INFO 01:48:58] my_main Updated target network
+[INFO 01:48:58] my_main t_env: 66005 / 100000
+[INFO 01:48:58] my_main Estimated time left: 5 minutes, 27 seconds. Time passed: 10 minutes, 32 seconds
+[INFO 01:49:08] my_main Recent Stats | t_env:      67000 | Episode:    13400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0542
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4862	grad_norm:                 0.0366
+hit_prob:                  0.2025	loss:                      0.0019	num_circle:                1.0000	q_taken_mean:              0.6676
+return_mean:               2.4755	return_std:                0.1066	success_mean:              0.0000	target_mean:               0.6642
+td_error_abs:              0.0198	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4862	vdn grad_norm:             0.0404	vdn hit_prob:              0.1525
+vdn intrinsic rewards:     0.0048	vdn loss:                  0.0019	vdn prediction loss:       0.0889	vdn q_taken_mean:          0.6661
+vdn target_mean:           0.6606	vdn td_error_abs:          0.0215	
+[INFO 01:49:08] my_main Updated target network
+[INFO 01:49:08] my_main Updated target network
+[INFO 01:49:08] my_main t_env: 67005 / 100000
+[INFO 01:49:08] my_main Estimated time left: 5 minutes, 18 seconds. Time passed: 10 minutes, 42 seconds
+[INFO 01:49:17] my_main Recent Stats | t_env:      68000 | Episode:    13600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0531
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4888	grad_norm:                 0.0327
+hit_prob:                  0.2006	loss:                      0.0017	num_circle:                1.0000	q_taken_mean:              0.6655
+return_mean:               2.4770	return_std:                0.1042	success_mean:              0.0000	target_mean:               0.6656
+td_error_abs:              0.0180	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4888	vdn grad_norm:             0.0405	vdn hit_prob:              0.1487
+vdn intrinsic rewards:     0.0044	vdn loss:                  0.0018	vdn prediction loss:       0.0822	vdn q_taken_mean:          0.6652
+vdn target_mean:           0.6627	vdn td_error_abs:          0.0207	
+[INFO 01:49:17] my_main Updated target network
+[INFO 01:49:17] my_main Updated target network
+[INFO 01:49:17] my_main t_env: 68005 / 100000
+[INFO 01:49:17] my_main Estimated time left: 5 minutes, 6 seconds. Time passed: 10 minutes, 51 seconds
+[INFO 01:49:27] my_main Recent Stats | t_env:      69000 | Episode:    13800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0520
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4888	grad_norm:                 0.0344
+hit_prob:                  0.1956	loss:                      0.0017	num_circle:                1.0000	q_taken_mean:              0.6630
+return_mean:               2.4780	return_std:                0.1021	success_mean:              0.0000	target_mean:               0.6666
+td_error_abs:              0.0191	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4888	vdn grad_norm:             0.0423	vdn hit_prob:              0.1538
+vdn intrinsic rewards:     0.0041	vdn loss:                  0.0018	vdn prediction loss:       0.0786	vdn q_taken_mean:          0.6641
+vdn target_mean:           0.6648	vdn td_error_abs:          0.0218	
+[INFO 01:49:27] my_main Updated target network
+[INFO 01:49:27] my_main Updated target network
+[INFO 01:49:27] my_main t_env: 69005 / 100000
+[INFO 01:49:27] my_main Estimated time left: 4 minutes, 57 seconds. Time passed: 11 minutes, 1 seconds
+[INFO 01:49:37] my_main Recent Stats | t_env:      70000 | Episode:    14000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0508
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4881	grad_norm:                 0.0397
+hit_prob:                  0.1938	loss:                      0.0019	num_circle:                1.0000	q_taken_mean:              0.6664
+return_mean:               2.4715	return_std:                0.1171	success_mean:              0.0000	target_mean:               0.6676
+td_error_abs:              0.0201	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4881	vdn grad_norm:             0.0500	vdn hit_prob:              0.1506
+vdn intrinsic rewards:     0.0038	vdn loss:                  0.0020	vdn prediction loss:       0.0754	vdn q_taken_mean:          0.6675
+vdn target_mean:           0.6656	vdn td_error_abs:          0.0237	
+[INFO 01:49:37] my_main Updated target network
+[INFO 01:49:37] my_main Updated target network
+[INFO 01:49:37] my_main t_env: 70005 / 100000
+[INFO 01:49:37] my_main Estimated time left: 4 minutes, 49 seconds. Time passed: 11 minutes, 11 seconds
+[INFO 01:49:46] my_main Recent Stats | t_env:      71000 | Episode:    14200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0498
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4906	grad_norm:                 0.0432
+hit_prob:                  0.1969	loss:                      0.0025	num_circle:                1.0000	q_taken_mean:              0.6639
+return_mean:               2.4670	return_std:                0.1267	success_mean:              0.0000	target_mean:               0.6660
+td_error_abs:              0.0211	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4906	vdn grad_norm:             0.0485	vdn hit_prob:              0.1606
+vdn intrinsic rewards:     0.0037	vdn loss:                  0.0026	vdn prediction loss:       0.0734	vdn q_taken_mean:          0.6655
+vdn target_mean:           0.6643	vdn td_error_abs:          0.0240	
+[INFO 01:49:46] my_main Updated target network
+[INFO 01:49:46] my_main Updated target network
+[INFO 01:49:46] my_main t_env: 71005 / 100000
+[INFO 01:49:46] my_main Estimated time left: 4 minutes, 38 seconds. Time passed: 11 minutes, 20 seconds
+[INFO 01:49:56] my_main Recent Stats | t_env:      72000 | Episode:    14400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0488
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4888	grad_norm:                 0.0409
+hit_prob:                  0.1863	loss:                      0.0018	num_circle:                1.0000	q_taken_mean:              0.6583
+return_mean:               2.4670	return_std:                0.1244	success_mean:              0.0000	target_mean:               0.6614
+td_error_abs:              0.0208	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4888	vdn grad_norm:             0.0432	vdn hit_prob:              0.1519
+vdn intrinsic rewards:     0.0035	vdn loss:                  0.0018	vdn prediction loss:       0.0708	vdn q_taken_mean:          0.6575
+vdn target_mean:           0.6596	vdn td_error_abs:          0.0213	
+[INFO 01:49:56] my_main Updated target network
+[INFO 01:49:56] my_main Updated target network
+[INFO 01:49:56] my_main t_env: 72005 / 100000
+[INFO 01:49:56] my_main Estimated time left: 4 minutes, 26 seconds. Time passed: 11 minutes, 30 seconds
+[INFO 01:50:05] my_main Recent Stats | t_env:      73000 | Episode:    14600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0478
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4887	grad_norm:                 0.0395
+hit_prob:                  0.1725	loss:                      0.0018	num_circle:                1.0000	q_taken_mean:              0.6559
+return_mean:               2.4690	return_std:                0.1229	success_mean:              0.0000	target_mean:               0.6571
+td_error_abs:              0.0200	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4887	vdn grad_norm:             0.0396	vdn hit_prob:              0.1463
+vdn intrinsic rewards:     0.0033	vdn loss:                  0.0018	vdn prediction loss:       0.0687	vdn q_taken_mean:          0.6558
+vdn target_mean:           0.6563	vdn td_error_abs:          0.0204	
+[INFO 01:50:05] my_main Updated target network
+[INFO 01:50:05] my_main Updated target network
+[INFO 01:50:05] my_main t_env: 73005 / 100000
+[INFO 01:50:05] my_main Estimated time left: 4 minutes, 19 seconds. Time passed: 11 minutes, 39 seconds
+[INFO 01:50:15] my_main Recent Stats | t_env:      74000 | Episode:    14800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0468
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4894	grad_norm:                 0.0318
+hit_prob:                  0.1744	loss:                      0.0016	num_circle:                1.0000	q_taken_mean:              0.6537
+return_mean:               2.4705	return_std:                0.1192	success_mean:              0.0000	target_mean:               0.6526
+td_error_abs:              0.0167	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4894	vdn grad_norm:             0.0331	vdn hit_prob:              0.1369
+vdn intrinsic rewards:     0.0031	vdn loss:                  0.0016	vdn prediction loss:       0.0657	vdn q_taken_mean:          0.6538
+vdn target_mean:           0.6518	vdn td_error_abs:          0.0176	
+[INFO 01:50:15] my_main Updated target network
+[INFO 01:50:15] my_main Updated target network
+[INFO 01:50:15] my_main t_env: 74005 / 100000
+[INFO 01:50:15] my_main Estimated time left: 4 minutes, 10 seconds. Time passed: 11 minutes, 49 seconds
+[INFO 01:50:25] my_main Recent Stats | t_env:      75000 | Episode:    15000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0458
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4919	grad_norm:                 0.0336
+hit_prob:                  0.1731	loss:                      0.0025	num_circle:                1.0000	q_taken_mean:              0.6486
+return_mean:               2.4760	return_std:                0.1106	success_mean:              0.0000	target_mean:               0.6510
+td_error_abs:              0.0161	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4919	vdn grad_norm:             0.0330	vdn hit_prob:              0.1400
+vdn intrinsic rewards:     0.0029	vdn loss:                  0.0024	vdn prediction loss:       0.0627	vdn q_taken_mean:          0.6484
+vdn target_mean:           0.6503	vdn td_error_abs:          0.0167	
+[INFO 01:50:25] my_main Updated target network
+[INFO 01:50:25] my_main Updated target network
+[INFO 01:50:25] my_main t_env: 75005 / 100000
+[INFO 01:50:25] my_main Estimated time left: 4 minutes, 0 seconds. Time passed: 11 minutes, 59 seconds
+[INFO 01:50:34] my_main Recent Stats | t_env:      76000 | Episode:    15200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0448
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4900	grad_norm:                 0.0311
+hit_prob:                  0.1781	loss:                      0.0019	num_circle:                1.0000	q_taken_mean:              0.6486
+return_mean:               2.4820	return_std:                0.1001	success_mean:              0.0000	target_mean:               0.6504
+td_error_abs:              0.0148	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4900	vdn grad_norm:             0.0337	vdn hit_prob:              0.1313
+vdn intrinsic rewards:     0.0027	vdn loss:                  0.0019	vdn prediction loss:       0.0590	vdn q_taken_mean:          0.6460
+vdn target_mean:           0.6495	vdn td_error_abs:          0.0166	
+[INFO 01:50:34] my_main Updated target network
+[INFO 01:50:34] my_main Updated target network
+[INFO 01:50:34] my_main t_env: 76005 / 100000
+[INFO 01:50:34] my_main Estimated time left: 3 minutes, 51 seconds. Time passed: 12 minutes, 8 seconds
+[INFO 01:50:44] my_main Recent Stats | t_env:      77000 | Episode:    15400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0439
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4913	grad_norm:                 0.0337
+hit_prob:                  0.1787	loss:                      0.0026	num_circle:                1.0000	q_taken_mean:              0.6513
+return_mean:               2.4820	return_std:                0.1001	success_mean:              0.0000	target_mean:               0.6512
+td_error_abs:              0.0152	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4913	vdn grad_norm:             0.0339	vdn hit_prob:              0.1338
+vdn intrinsic rewards:     0.0025	vdn loss:                  0.0026	vdn prediction loss:       0.0569	vdn q_taken_mean:          0.6491
+vdn target_mean:           0.6506	vdn td_error_abs:          0.0166	
+[INFO 01:50:44] my_main Updated target network
+[INFO 01:50:44] my_main Updated target network
+[INFO 01:50:44] my_main t_env: 77005 / 100000
+[INFO 01:50:44] my_main Estimated time left: 3 minutes, 40 seconds. Time passed: 12 minutes, 18 seconds
+[INFO 01:50:53] my_main Recent Stats | t_env:      78000 | Episode:    15600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0430
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4925	grad_norm:                 0.0357
+hit_prob:                  0.1887	loss:                      0.0025	num_circle:                1.0000	q_taken_mean:              0.6539
+return_mean:               2.4845	return_std:                0.0917	success_mean:              0.0000	target_mean:               0.6530
+td_error_abs:              0.0156	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4925	vdn grad_norm:             0.0403	vdn hit_prob:              0.1356
+vdn intrinsic rewards:     0.0024	vdn loss:                  0.0025	vdn prediction loss:       0.0555	vdn q_taken_mean:          0.6482
+vdn target_mean:           0.6520	vdn td_error_abs:          0.0183	
+[INFO 01:50:53] my_main Updated target network
+[INFO 01:50:53] my_main Updated target network
+[INFO 01:50:53] my_main t_env: 78005 / 100000
+[INFO 01:50:53] my_main Estimated time left: 3 minutes, 32 seconds. Time passed: 12 minutes, 28 seconds
+[INFO 01:51:03] my_main Recent Stats | t_env:      79000 | Episode:    15800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0421
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4925	grad_norm:                 0.0442
+hit_prob:                  0.1912	loss:                      0.0025	num_circle:                1.0000	q_taken_mean:              0.6545
+return_mean:               2.4830	return_std:                0.0954	success_mean:              0.0000	target_mean:               0.6562
+td_error_abs:              0.0183	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4925	vdn grad_norm:             0.0436	vdn hit_prob:              0.1400
+vdn intrinsic rewards:     0.0022	vdn loss:                  0.0025	vdn prediction loss:       0.0531	vdn q_taken_mean:          0.6500
+vdn target_mean:           0.6558	vdn td_error_abs:          0.0191	
+[INFO 01:51:03] my_main Updated target network
+[INFO 01:51:03] my_main Updated target network
+[INFO 01:51:03] my_main t_env: 79005 / 100000
+[INFO 01:51:03] my_main Estimated time left: 3 minutes, 22 seconds. Time passed: 12 minutes, 37 seconds
+[INFO 01:51:13] my_main Recent Stats | t_env:      80000 | Episode:    16000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0412
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4906	grad_norm:                 0.0406
+hit_prob:                  0.1994	loss:                      0.0014	num_circle:                1.0000	q_taken_mean:              0.6603
+return_mean:               2.4820	return_std:                0.0952	success_mean:              0.0000	target_mean:               0.6586
+td_error_abs:              0.0179	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4906	vdn grad_norm:             0.0350	vdn hit_prob:              0.1431
+vdn intrinsic rewards:     0.0021	vdn loss:                  0.0014	vdn prediction loss:       0.0514	vdn q_taken_mean:          0.6554
+vdn target_mean:           0.6590	vdn td_error_abs:          0.0169	
+[INFO 01:51:13] my_main Updated target network
+[INFO 01:51:13] my_main Updated target network
+[INFO 01:51:13] my_main t_env: 80005 / 100000
+[INFO 01:51:13] my_main Estimated time left: 3 minutes, 11 seconds. Time passed: 12 minutes, 47 seconds
+[INFO 01:51:22] my_main Recent Stats | t_env:      81000 | Episode:    16200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0404
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4931	grad_norm:                 0.0438
+hit_prob:                  0.1987	loss:                      0.0013	num_circle:                1.0000	q_taken_mean:              0.6605
+return_mean:               2.4825	return_std:                0.0911	success_mean:              0.0000	target_mean:               0.6603
+td_error_abs:              0.0188	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4931	vdn grad_norm:             0.0400	vdn hit_prob:              0.1531
+vdn intrinsic rewards:     0.0020	vdn loss:                  0.0013	vdn prediction loss:       0.0483	vdn q_taken_mean:          0.6563
+vdn target_mean:           0.6611	vdn td_error_abs:          0.0181	
+[INFO 01:51:22] my_main Updated target network
+[INFO 01:51:22] my_main Updated target network
+[INFO 01:51:22] my_main t_env: 81005 / 100000
+[INFO 01:51:22] my_main Estimated time left: 2 minutes, 59 seconds. Time passed: 12 minutes, 56 seconds
+[INFO 01:51:32] my_main Recent Stats | t_env:      82000 | Episode:    16400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0395
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4925	grad_norm:                 0.0429
+hit_prob:                  0.2044	loss:                      0.0004	num_circle:                1.0000	q_taken_mean:              0.6633
+return_mean:               2.4830	return_std:                0.0899	success_mean:              0.0000	target_mean:               0.6624
+td_error_abs:              0.0179	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4925	vdn grad_norm:             0.0402	vdn hit_prob:              0.1600
+vdn intrinsic rewards:     0.0018	vdn loss:                  0.0005	vdn prediction loss:       0.0460	vdn q_taken_mean:          0.6592
+vdn target_mean:           0.6632	vdn td_error_abs:          0.0175	
+[INFO 01:51:32] my_main Updated target network
+[INFO 01:51:32] my_main Updated target network
+[INFO 01:51:32] my_main t_env: 82005 / 100000
+[INFO 01:51:32] my_main Estimated time left: 2 minutes, 51 seconds. Time passed: 13 minutes, 6 seconds
+[INFO 01:51:41] my_main Recent Stats | t_env:      83000 | Episode:    16600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0387
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4938	grad_norm:                 0.0480
+hit_prob:                  0.1994	loss:                      0.0005	num_circle:                1.0000	q_taken_mean:              0.6659
+return_mean:               2.4785	return_std:                0.1017	success_mean:              0.0000	target_mean:               0.6641
+td_error_abs:              0.0197	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4938	vdn grad_norm:             0.0338	vdn hit_prob:              0.1625
+vdn intrinsic rewards:     0.0017	vdn loss:                  0.0004	vdn prediction loss:       0.0433	vdn q_taken_mean:          0.6610
+vdn target_mean:           0.6619	vdn td_error_abs:          0.0152	
+[INFO 01:51:41] my_main Updated target network
+[INFO 01:51:41] my_main Updated target network
+[INFO 01:51:41] my_main t_env: 83005 / 100000
+[INFO 01:51:41] my_main Estimated time left: 2 minutes, 41 seconds. Time passed: 13 minutes, 15 seconds
+[INFO 01:51:51] my_main Recent Stats | t_env:      84000 | Episode:    16800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0379
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4956	grad_norm:                 0.0456
+hit_prob:                  0.1987	loss:                      0.0005	num_circle:                1.0000	q_taken_mean:              0.6708
+return_mean:               2.4765	return_std:                0.1076	success_mean:              0.0000	target_mean:               0.6648
+td_error_abs:              0.0183	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4956	vdn grad_norm:             0.0423	vdn hit_prob:              0.1537
+vdn intrinsic rewards:     0.0016	vdn loss:                  0.0005	vdn prediction loss:       0.0410	vdn q_taken_mean:          0.6590
+vdn target_mean:           0.6616	vdn td_error_abs:          0.0184	
+[INFO 01:51:51] my_main Updated target network
+[INFO 01:51:51] my_main Updated target network
+[INFO 01:51:51] my_main t_env: 84005 / 100000
+[INFO 01:51:51] my_main Estimated time left: 2 minutes, 33 seconds. Time passed: 13 minutes, 25 seconds
+[INFO 01:52:00] my_main Recent Stats | t_env:      85000 | Episode:    17000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0371
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4969	grad_norm:                 0.0465
+hit_prob:                  0.1894	loss:                      0.0005	num_circle:                1.0000	q_taken_mean:              0.6654
+return_mean:               2.4760	return_std:                0.1088	success_mean:              0.0000	target_mean:               0.6629
+td_error_abs:              0.0186	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4969	vdn grad_norm:             0.0425	vdn hit_prob:              0.1525
+vdn intrinsic rewards:     0.0015	vdn loss:                  0.0005	vdn prediction loss:       0.0392	vdn q_taken_mean:          0.6562
+vdn target_mean:           0.6600	vdn td_error_abs:          0.0185	
+[INFO 01:52:00] my_main Updated target network
+[INFO 01:52:00] my_main Updated target network
+[INFO 01:52:00] my_main t_env: 85005 / 100000
+[INFO 01:52:00] my_main Estimated time left: 2 minutes, 23 seconds. Time passed: 13 minutes, 34 seconds
+[INFO 01:52:10] my_main Recent Stats | t_env:      86000 | Episode:    17200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0363
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4956	grad_norm:                 0.0528
+hit_prob:                  0.1875	loss:                      0.0006	num_circle:                1.0000	q_taken_mean:              0.6676
+return_mean:               2.4765	return_std:                0.1072	success_mean:              0.0000	target_mean:               0.6609
+td_error_abs:              0.0209	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4956	vdn grad_norm:             0.0324	vdn hit_prob:              0.1450
+vdn intrinsic rewards:     0.0014	vdn loss:                  0.0004	vdn prediction loss:       0.0393	vdn q_taken_mean:          0.6556
+vdn target_mean:           0.6571	vdn td_error_abs:          0.0145	
+[INFO 01:52:10] my_main Updated target network
+[INFO 01:52:10] my_main Updated target network
+[INFO 01:52:10] my_main t_env: 86005 / 100000
+[INFO 01:52:10] my_main Estimated time left: 2 minutes, 12 seconds. Time passed: 13 minutes, 44 seconds
+[INFO 01:52:19] my_main Recent Stats | t_env:      87000 | Episode:    17400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0356
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4956	grad_norm:                 0.0501
+hit_prob:                  0.1906	loss:                      0.0006	num_circle:                1.0000	q_taken_mean:              0.6629
+return_mean:               2.4745	return_std:                0.1114	success_mean:              0.0000	target_mean:               0.6588
+td_error_abs:              0.0198	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4956	vdn grad_norm:             0.0278	vdn hit_prob:              0.1494
+vdn intrinsic rewards:     0.0014	vdn loss:                  0.0003	vdn prediction loss:       0.0380	vdn q_taken_mean:          0.6516
+vdn target_mean:           0.6553	vdn td_error_abs:          0.0127	
+[INFO 01:52:19] my_main Updated target network
+[INFO 01:52:19] my_main Updated target network
+[INFO 01:52:19] my_main t_env: 87005 / 100000
+[INFO 01:52:19] my_main Estimated time left: 2 minutes, 4 seconds. Time passed: 13 minutes, 53 seconds
+[INFO 01:52:29] my_main Recent Stats | t_env:      88000 | Episode:    17600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0348
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4938	grad_norm:                 0.0409
+hit_prob:                  0.1950	loss:                      0.0004	num_circle:                1.0000	q_taken_mean:              0.6570
+return_mean:               2.4775	return_std:                0.1035	success_mean:              0.0000	target_mean:               0.6561
+td_error_abs:              0.0163	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4938	vdn grad_norm:             0.0241	vdn hit_prob:              0.1450
+vdn intrinsic rewards:     0.0013	vdn loss:                  0.0003	vdn prediction loss:       0.0383	vdn q_taken_mean:          0.6520
+vdn target_mean:           0.6565	vdn td_error_abs:          0.0112	
+[INFO 01:52:29] my_main Updated target network
+[INFO 01:52:29] my_main Updated target network
+[INFO 01:52:29] my_main t_env: 88005 / 100000
+[INFO 01:52:29] my_main Estimated time left: 1 minutes, 55 seconds. Time passed: 14 minutes, 3 seconds
+[INFO 01:52:38] my_main Recent Stats | t_env:      89000 | Episode:    17800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0341
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4925	grad_norm:                 0.0328
+hit_prob:                  0.2081	loss:                      0.0003	num_circle:                1.0000	q_taken_mean:              0.6529
+return_mean:               2.4800	return_std:                0.0965	success_mean:              0.0000	target_mean:               0.6538
+td_error_abs:              0.0138	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4925	vdn grad_norm:             0.0108	vdn hit_prob:              0.1544
+vdn intrinsic rewards:     0.0013	vdn loss:                  0.0001	vdn prediction loss:       0.0376	vdn q_taken_mean:          0.6539
+vdn target_mean:           0.6557	vdn td_error_abs:          0.0060	
+[INFO 01:52:38] my_main Updated target network
+[INFO 01:52:39] my_main Updated target network
+[INFO 01:52:39] my_main t_env: 89005 / 100000
+[INFO 01:52:39] my_main Estimated time left: 1 minutes, 45 seconds. Time passed: 14 minutes, 13 seconds
+[INFO 01:52:48] my_main Recent Stats | t_env:      90000 | Episode:    18000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0334
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4906	grad_norm:                 0.0331
+hit_prob:                  0.2181	loss:                      0.0004	num_circle:                1.0000	q_taken_mean:              0.6515
+return_mean:               2.4790	return_std:                0.0987	success_mean:              0.0000	target_mean:               0.6525
+td_error_abs:              0.0141	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4906	vdn grad_norm:             0.0192	vdn hit_prob:              0.1650
+vdn intrinsic rewards:     0.0012	vdn loss:                  0.0002	vdn prediction loss:       0.0369	vdn q_taken_mean:          0.6512
+vdn target_mean:           0.6549	vdn td_error_abs:          0.0092	
+[INFO 01:52:48] my_main Updated target network
+[INFO 01:52:48] my_main Updated target network
+[INFO 01:52:48] my_main t_env: 90005 / 100000
+[INFO 01:52:48] my_main Estimated time left: 1 minutes, 34 seconds. Time passed: 14 minutes, 22 seconds
+[INFO 01:52:57] my_main Recent Stats | t_env:      91000 | Episode:    18200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0327
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4906	grad_norm:                 0.0201
+hit_prob:                  0.2269	loss:                      0.0002	num_circle:                1.0000	q_taken_mean:              0.6481
+return_mean:               2.4760	return_std:                0.1065	success_mean:              0.0000	target_mean:               0.6518
+td_error_abs:              0.0094	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4906	vdn grad_norm:             0.0198	vdn hit_prob:              0.1663
+vdn intrinsic rewards:     0.0012	vdn loss:                  0.0002	vdn prediction loss:       0.0354	vdn q_taken_mean:          0.6528
+vdn target_mean:           0.6567	vdn td_error_abs:          0.0092	
+[INFO 01:52:57] my_main Updated target network
+[INFO 01:52:57] my_main Updated target network
+[INFO 01:52:57] my_main t_env: 91005 / 100000
+[INFO 01:52:57] my_main Estimated time left: 1 minutes, 26 seconds. Time passed: 14 minutes, 32 seconds
+[INFO 01:53:07] my_main Recent Stats | t_env:      92000 | Episode:    18400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0320
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4894	grad_norm:                 0.0187
+hit_prob:                  0.2288	loss:                      0.0002	num_circle:                1.0000	q_taken_mean:              0.6486
+return_mean:               2.4780	return_std:                0.1024	success_mean:              0.0000	target_mean:               0.6520
+td_error_abs:              0.0088	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4894	vdn grad_norm:             0.0326	vdn hit_prob:              0.1550
+vdn intrinsic rewards:     0.0011	vdn loss:                  0.0004	vdn prediction loss:       0.0349	vdn q_taken_mean:          0.6506
+vdn target_mean:           0.6571	vdn td_error_abs:          0.0142	
+[INFO 01:53:07] my_main Updated target network
+[INFO 01:53:07] my_main Updated target network
+[INFO 01:53:07] my_main t_env: 92005 / 100000
+[INFO 01:53:07] my_main Estimated time left: 1 minutes, 15 seconds. Time passed: 14 minutes, 41 seconds
+[INFO 01:53:16] my_main Recent Stats | t_env:      93000 | Episode:    18600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0314
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4888	grad_norm:                 0.0169
+hit_prob:                  0.2275	loss:                      0.0001	num_circle:                1.0000	q_taken_mean:              0.6487
+return_mean:               2.4780	return_std:                0.1048	success_mean:              0.0000	target_mean:               0.6518
+td_error_abs:              0.0082	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4888	vdn grad_norm:             0.0343	vdn hit_prob:              0.1562
+vdn intrinsic rewards:     0.0010	vdn loss:                  0.0004	vdn prediction loss:       0.0334	vdn q_taken_mean:          0.6486
+vdn target_mean:           0.6556	vdn td_error_abs:          0.0150	
+[INFO 01:53:16] my_main Updated target network
+[INFO 01:53:16] my_main Updated target network
+[INFO 01:53:16] my_main t_env: 93005 / 100000
+[INFO 01:53:16] my_main Estimated time left: 1 minutes, 6 seconds. Time passed: 14 minutes, 51 seconds
+[INFO 01:53:26] my_main Recent Stats | t_env:      94000 | Episode:    18800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0307
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4888	grad_norm:                 0.0178
+hit_prob:                  0.2131	loss:                      0.0002	num_circle:                1.0000	q_taken_mean:              0.6485
+return_mean:               2.4765	return_std:                0.1080	success_mean:              0.0000	target_mean:               0.6513
+td_error_abs:              0.0087	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4888	vdn grad_norm:             0.0366	vdn hit_prob:              0.1506
+vdn intrinsic rewards:     0.0010	vdn loss:                  0.0005	vdn prediction loss:       0.0324	vdn q_taken_mean:          0.6476
+vdn target_mean:           0.6551	vdn td_error_abs:          0.0158	
+[INFO 01:53:26] my_main Updated target network
+[INFO 01:53:26] my_main Updated target network
+[INFO 01:53:26] my_main t_env: 94005 / 100000
+[INFO 01:53:26] my_main Estimated time left: 57 seconds. Time passed: 15 minutes, 0 seconds
+[INFO 01:53:35] my_main Recent Stats | t_env:      95000 | Episode:    19000
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0300
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4894	grad_norm:                 0.0138
+hit_prob:                  0.2169	loss:                      0.0001	num_circle:                1.0000	q_taken_mean:              0.6485
+return_mean:               2.4750	return_std:                0.1128	success_mean:              0.0000	target_mean:               0.6506
+td_error_abs:              0.0071	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4894	vdn grad_norm:             0.0271	vdn hit_prob:              0.1344
+vdn intrinsic rewards:     0.0009	vdn loss:                  0.0003	vdn prediction loss:       0.0315	vdn q_taken_mean:          0.6502
+vdn target_mean:           0.6548	vdn td_error_abs:          0.0120	
+[INFO 01:53:35] my_main Updated target network
+[INFO 01:53:35] my_main Updated target network
+[INFO 01:53:35] my_main t_env: 95005 / 100000
+[INFO 01:53:35] my_main Estimated time left: 47 seconds. Time passed: 15 minutes, 10 seconds
+[INFO 01:53:45] my_main Recent Stats | t_env:      96000 | Episode:    19200
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0294
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4888	grad_norm:                 0.0215
+hit_prob:                  0.2100	loss:                      0.0002	num_circle:                1.0000	q_taken_mean:              0.6456
+return_mean:               2.4765	return_std:                0.1094	success_mean:              0.0000	target_mean:               0.6493
+td_error_abs:              0.0098	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4888	vdn grad_norm:             0.0276	vdn hit_prob:              0.1387
+vdn intrinsic rewards:     0.0009	vdn loss:                  0.0003	vdn prediction loss:       0.0315	vdn q_taken_mean:          0.6488
+vdn target_mean:           0.6535	vdn td_error_abs:          0.0122	
+[INFO 01:53:45] my_main Updated target network
+[INFO 01:53:45] my_main Updated target network
+[INFO 01:53:45] my_main t_env: 96005 / 100000
+[INFO 01:53:45] my_main Estimated time left: 38 seconds. Time passed: 15 minutes, 19 seconds
+[INFO 01:53:55] my_main Recent Stats | t_env:      97000 | Episode:    19400
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0288
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4912	grad_norm:                 0.0203
+hit_prob:                  0.2112	loss:                      0.0002	num_circle:                1.0000	q_taken_mean:              0.6479
+return_mean:               2.4765	return_std:                0.1094	success_mean:              0.0000	target_mean:               0.6506
+td_error_abs:              0.0093	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4912	vdn grad_norm:             0.0144	vdn hit_prob:              0.1375
+vdn intrinsic rewards:     0.0009	vdn loss:                  0.0001	vdn prediction loss:       0.0303	vdn q_taken_mean:          0.6519
+vdn target_mean:           0.6539	vdn td_error_abs:          0.0069	
+[INFO 01:53:55] my_main Updated target network
+[INFO 01:53:55] my_main Updated target network
+[INFO 01:53:55] my_main t_env: 97005 / 100000
+[INFO 01:53:55] my_main Estimated time left: 28 seconds. Time passed: 15 minutes, 29 seconds
+[INFO 01:54:04] my_main Recent Stats | t_env:      98000 | Episode:    19600
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0282
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4919	grad_norm:                 0.0210
+hit_prob:                  0.2262	loss:                      0.0002	num_circle:                1.0000	q_taken_mean:              0.6487
+return_mean:               2.4750	return_std:                0.1142	success_mean:              0.0000	target_mean:               0.6515
+td_error_abs:              0.0095	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4919	vdn grad_norm:             0.0137	vdn hit_prob:              0.1412
+vdn intrinsic rewards:     0.0008	vdn loss:                  0.0001	vdn prediction loss:       0.0294	vdn q_taken_mean:          0.6519
+vdn target_mean:           0.6538	vdn td_error_abs:          0.0063	
+[INFO 01:54:04] my_main Updated target network
+[INFO 01:54:04] my_main Updated target network
+[INFO 01:54:04] my_main t_env: 98005 / 100000
+[INFO 01:54:04] my_main Estimated time left: 18 seconds. Time passed: 15 minutes, 38 seconds
+[INFO 01:54:14] my_main Recent Stats | t_env:      99000 | Episode:    19800
+curiosity_decay_cycle:   5000.0000	curiosity_decay_rate:      0.9000	curiosity_decay_stop:      0.0100	curiosity_scale:           0.0276
+ep_length_mean:            5.0000	epsilon:                   0.0500	extrinsic rewards:         0.4931	grad_norm:                 0.0281
+hit_prob:                  0.2206	loss:                      0.0002	num_circle:                1.0000	q_taken_mean:              0.6526
+return_mean:               2.4765	return_std:                0.1134	success_mean:              0.0000	target_mean:               0.6538
+td_error_abs:              0.0116	test_ep_length_mean:       5.0000	test_return_mean:          2.5000	test_return_std:           0.0000
+test_success_mean:         0.0000	vdn extrinsic rewards:     0.4931	vdn grad_norm:             0.0164	vdn hit_prob:              0.1400
+vdn intrinsic rewards:     0.0008	vdn loss:                  0.0001	vdn prediction loss:       0.0297	vdn q_taken_mean:          0.6534
+vdn target_mean:           0.6556	vdn td_error_abs:          0.0071	
+[INFO 01:54:14] my_main Updated target network
+[INFO 01:54:14] my_main Updated target network
+[INFO 01:54:14] my_main t_env: 99005 / 100000
+[INFO 01:54:14] my_main Estimated time left: 9 seconds. Time passed: 15 minutes, 48 seconds

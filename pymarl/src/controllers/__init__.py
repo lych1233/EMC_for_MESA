@@ -16,3 +16,7 @@ REGISTRY["nn_predict"] = RND_state_predictor
 
 REGISTRY["predict"] = RNDpredictor
 REGISTRY["fast_predict"] = RNDfastpredictor
+
+
+from .sep_fast_controller import SepFastMAC
+REGISTRY["sep_fast_mac"] = SepFastMAC

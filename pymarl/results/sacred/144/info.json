@@ -1,0 +1,76 @@
+{
+  "all_attack_mean": [
+    6.0
+  ],
+  "all_attack_mean_T": [
+    57
+  ],
+  "battle_won_mean": [
+    0.0
+  ],
+  "battle_won_mean_T": [
+    57
+  ],
+  "ep_length_mean": [
+    57.0
+  ],
+  "ep_length_mean_T": [
+    57
+  ],
+  "epsilon": [
+    1.0
+  ],
+  "epsilon_T": [
+    57
+  ],
+  "failed_attack_mean": [
+    6.0
+  ],
+  "failed_attack_mean_T": [
+    57
+  ],
+  "num_circle": [
+    2
+  ],
+  "num_circle_T": [
+    57
+  ],
+  "optimal_attack_mean": [
+    0.0
+  ],
+  "optimal_attack_mean_T": [
+    57
+  ],
+  "return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0396111111111111
+    }
+  ],
+  "return_mean_T": [
+    57
+  ],
+  "return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_std_T": [
+    57
+  ],
+  "suboptimal_attack_mean": [
+    0.0
+  ],
+  "suboptimal_attack_mean_T": [
+    57
+  ],
+  "total_damage_mean": [
+    147.25
+  ],
+  "total_damage_mean_T": [
+    57
+  ]
+}

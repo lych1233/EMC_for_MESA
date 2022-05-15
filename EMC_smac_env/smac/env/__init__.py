@@ -9,4 +9,6 @@ from smac.env.matrix_game_2 import Matrix_game2Env
 from smac.env.matrix_game_3 import Matrix_game3Env
 from smac.env.mmdp_game_1 import mmdp_game1Env
 
+from smac.env.starcraft2.starcraft2_climbreward import StarCraft2Env as SmacClimbReward
+
 __all__ = ["MultiAgentEnv", "StarCraft2Env", "Matrix_game1Env", "Matrix_game2Env", "Matrix_game3Env", "mmdp_game1Env"]

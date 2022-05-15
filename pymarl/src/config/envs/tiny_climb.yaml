@@ -1,0 +1,36 @@
+env: explore
+
+env_args:
+  map_name: "none"
+  episode_length: 75
+  scenario_name: 'tiny_climb'
+  max_agents: 4
+  num_agents: 2
+  K_agents: 2
+  max_landmarks: 4
+  num_landmarks: 4
+  difficulty: 0.1
+  target_id: 0
+    
+  # Observation modification
+  permutate_landmarks: False
+  permutate_agents: False
+  uncover_target_color: False
+  
+  # given reward (default: continuously)
+  spark_reward: False
+  mode_reward: False
+
+  # reset behaviors each episode
+  reset_map: False
+  reset_target_id: False
+    
+  # elaborated information: success for the goal; success for each mode; etc.
+  elaborated_information: False
+
+test_nepisode: 10
+test_interval: 10000
+log_interval: 10000
+runner_log_interval: 10000
+learner_log_interval: 10000
+t_max: 3000000

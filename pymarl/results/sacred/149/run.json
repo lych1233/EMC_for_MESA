@@ -1,0 +1,113 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/home/lych/IJCAI22/EMC/pymarl/src",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.19.5",
+      "PyYAML==5.4.1",
+      "sacred==0.8.2",
+      "torch==1.7.0"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "0f27b5532e3e54ff121e5ac41cde42b53911113d",
+        "dirty": true,
+        "url": "https://github.com/kikojay/EMC.git"
+      },
+      {
+        "commit": "0f27b5532e3e54ff121e5ac41cde42b53911113d",
+        "dirty": true,
+        "url": "https://github.com/kikojay/EMC.git"
+      },
+      {
+        "commit": "0f27b5532e3e54ff121e5ac41cde42b53911113d",
+        "dirty": true,
+        "url": "https://github.com/kikojay/EMC.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_164592feb8a57f46e399a7eb15fc6652.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_4cda1ba2b2ab15688345fca5f39750bc.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_dbae9b7001fb2435d067d770605d31e4.py"
+      ]
+    ]
+  },
+  "heartbeat": "2022-04-30T05:45:46.595398",
+  "host": {
+    "ENV": {},
+    "cpu": "AMD Ryzen Threadripper 3990X 64-Core Processor",
+    "gpus": {
+      "driver_version": "460.56",
+      "gpus": [
+        {
+          "model": "GeForce RTX 3070",
+          "persistence_mode": false,
+          "total_memory": 7982
+        },
+        {
+          "model": "GeForce RTX 3090",
+          "persistence_mode": false,
+          "total_memory": 24265
+        },
+        {
+          "model": "GeForce RTX 3070",
+          "persistence_mode": false,
+          "total_memory": 7982
+        }
+      ]
+    },
+    "hostname": "07584409239e",
+    "os": [
+      "Linux",
+      "Linux-4.15.0-142-generic-x86_64-with-debian-buster-sid"
+    ],
+    "python_version": "3.6.13"
+  },
+  "meta": {
+    "command": "my_main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=3s_vs_3z_medium",
+        "env_args.new_suboptimal_reward_scale=0.1"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-04-30T02:18:56.405889",
+  "status": "RUNNING"
+}

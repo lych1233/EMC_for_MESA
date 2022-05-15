@@ -448,6 +448,22 @@ map_param_registry = {
     },
 }
 
+horizon_scale = {
+    "instant": 0.2,
+    "short": 0.4,
+    "medium": 0.6,
+    "long": 0.8,
+}
+
+from copy import deepcopy
+
+for spec_map_name in ["3s_vs_3z", "3s_vs_4z", "3s_vs_5z"]:
+    old_map = spec_map_name
+    for sepc_horinzon_scale in ["instant", "short", "medium", "long"]:
+        new_map = "{}_{}".format(spec_map_name, sepc_horinzon_scale)
+        map_param_registry[new_map] = deepcopy(map_param_registry[old_map])
+        map_param_registry[new_map]["limit"] = int(map_param_registry[old_map]["limit"] * horizon_scale[sepc_horinzon_scale])
+        print("horizon of [{}]: {}".format(new_map, map_param_registry[new_map]["limit"]))
 
 def get_smac_map_registry():
     return map_param_registry

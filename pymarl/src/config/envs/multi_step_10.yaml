@@ -1,0 +1,16 @@
+env: naive
+
+env_args:
+  map_name: "multi_step_10"
+  episode_length: 5
+  scenario_name: 'multi_step_10'
+  num_agents: 2
+
+test_nepisode: 10
+test_interval: 1000
+log_interval: 1000
+runner_log_interval: 1000
+learner_log_interval: 1000
+t_max: 100000
+
+wandb_project: "naive"

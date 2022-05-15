@@ -1,0 +1,59 @@
+# --- Qatten specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+runner: "episode"
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the QMIX to train
+agent_output_type: "q"
+learner: "q_learner"
+double_q: True
+mixer: "qmix"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+gamma: 0.99
+
+num_circle: 2
+
+curiosity_scale: 0.001
+curiosity_decay: True
+curiosity_decay_rate: 0.9
+curiosity_decay_cycle: 100000
+curiosity_decay_stop: 0.0
+
+
+
+save_buffer: False
+
+
+
+
+mac: "fast_mac"
+#agent: "rnn_individualQ"
+#use_individual_Q: True
+agent: "rnn_fast"
+is_prioritized_buffer: False
+
+use_emdqn: False
+emdqn_loss_weight: 0.01
+
+emdqn_buffer_size: 1000000
+emdqn_latent_dim: 4
+q_loss_weight: 1
+
+soft_update_tau: 0.005
+vdn_soft_update: True
+predict_vdn_target: True
+predict2_vdn_target: True
+use_qtotal_td: False
+name: "EMC_sc2_qmix"
