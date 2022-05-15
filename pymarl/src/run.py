@@ -127,6 +127,8 @@ def run_sequential(args, logger):
         "reward": {"vshape": (1,)},
         "terminated": {"vshape": (1,), "dtype": th.uint8},
     }
+    if "maven" in args.runner:
+        scheme.update({"noise": {"vshape": (args.noise_dim,)}})
     groups = {
         "agents": args.n_agents
     }

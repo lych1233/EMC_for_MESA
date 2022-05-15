@@ -26,6 +26,8 @@ REGISTRY["dmaq_qatten_learner"] = DMAQ_qattenLearner
 REGISTRY["fast_QLearner"] = fast_QLearner
 REGISTRY['qplex_curiosity_vdn_learner']=QPLEX_curiosity_vdn_Learner
 
+from .noise_q_learner import QLearner as NoiseQLearner
+REGISTRY["noise_q_learner"] = NoiseQLearner
 
 
 

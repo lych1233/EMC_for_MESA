@@ -20,3 +20,7 @@ REGISTRY["rnd_nn"] = RND_nn_Agent
 REGISTRY["rnd_history"] = RNDHistoryAgent
 REGISTRY["rnn_individualQ"] = RNN_individualQ_Agent
 REGISTRY["rnd_fast_history"] = RND_Fast_historyAgent
+
+
+from .sep_noise_rnn_agent import RNNAgent as SepNoiseRNNAgent
+REGISTRY["sep_noise_rnn"] = SepNoiseRNNAgent

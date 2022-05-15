@@ -20,3 +20,6 @@ REGISTRY["fast_predict"] = RNDfastpredictor
 
 from .sep_fast_controller import SepFastMAC
 REGISTRY["sep_fast_mac"] = SepFastMAC
+
+from .separated_noise_controller import SepNoiseMAC
+REGISTRY["separated_noise_mac"] = SepNoiseMAC

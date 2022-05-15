@@ -14,6 +14,7 @@ class ExploreWrapper(MultiAgentEnv):
         
         if isinstance(args, dict):
             args = convert(args)
+        print(args)
 
         self.env = MPEEnv(args)
         self.n_agents = args.num_agents
