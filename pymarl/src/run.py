@@ -106,6 +106,7 @@ def save_one_buffer(args, save_buffer, env_name, from_start=False):
 
 
 def run_sequential(args, logger):
+    th.set_num_threads(8)
 
     # Init runner so we can get env info
     runner = r_REGISTRY[args.runner](args=args, logger=logger)
