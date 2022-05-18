@@ -189,7 +189,7 @@ class SwimmerWrapper(ParallelEnv):
         correct = [abs(angles[0] - self.current_task) < self.EPSILON, abs(angles[1] - self.current_task) < self.EPSILON]
         if sum(correct) == 2:
             reward *= 1
-            self.logging.info('YAY!')
+            # self.logging.info('YAY!')
         elif sum(correct) == 0:
             reward *= 0.5
         else:
