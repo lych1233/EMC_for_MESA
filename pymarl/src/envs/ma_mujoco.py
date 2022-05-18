@@ -30,6 +30,15 @@ class MAMuJoCoEnv(MultiAgentEnv):
             }
             env_config["current_task"] = env_config['task_space'][0]
             self.env = SwimmerWrapper(env_config)
+        elif args.scenario_name == "swimmer_velocity":
+            assert self.num_agents == 2
+            env_config = {
+                'seed': self.seed,
+                'reward_type': 1,
+                'task_space': np.random.uniform(-self.angle_range / 180 * np.pi, self.angle_range / 180 * np.pi, size=self.num)
+            }
+            env_config["current_task"] = env_config['task_space'][0]
+            self.env = SwimmerWrapper(env_config)
         else:
             raise NotImplementedError
         
@@ -117,6 +126,107 @@ class MAMuJoCoEnv(MultiAgentEnv):
         self.env.config["seed"] = seed
 
 class SwimmerWrapper(ParallelEnv):
+    EPSILON = 2e-2
+    RANGE = 0.5
+
+    def __init__(self, env_config):
+        env_args = {"scenario": "Swimmer-v2",
+                    "agent_conf": "2x1",
+                    "agent_obsk": 1,
+                    "episode_limit": 1000}
+
+        self.env = MujocoMulti(env_args=env_args)
+        env_info = self.env.get_env_info()
+        n_agents = env_info["n_agents"]
+
+        self.agents = [f"player_{i}" for i in range(n_agents)]
+        self.possible_agents = copy(self.agents)
+        self.observation_spaces = {
+            self.agents[i]: gym.spaces.Box(low=-np.inf, high=np.inf, shape=(env_info['obs_shape'],))
+            for i, agent in enumerate(self.agents)}
+        self.action_spaces = {
+            self.agents[i]: env_info['action_spaces'][i] for i, agent in enumerate(self.agents)
+        }
+
+        self.all_tasks = env_config['task_space']
+        self.seed = env_config['seed']
+        self.current_task = env_config.get('current_task', None)
+        self.config = copy(env_config)
+        # from policies.shared import logging
+        # self.logging = logging
+
+    def reset(self):
+        self.env.reset()
+        obs = self.env.get_obs()
+        return {agent: obs[i] for i, agent in enumerate(self.agents)}
+
+    def step(self, action):
+        # print(action)
+        action = [action[agent] for agent in self.agents]
+        reward, done, _ = self.env.step(action)
+        obs = self.env.get_obs()
+
+        # assert self.config['reward_type'] == 0
+        if self.config['reward_type'] == 0:
+            reward = 1.0
+        elif self.config['reward_type'] == 1:
+            reward = 1.0 if reward > self.RANGE else 0.0
+        else:
+            reward = reward
+
+        # Recalculate reward based on current_task
+        if self.current_task is None:
+            # raise ValueError("No task selected")
+            ret = [{agent: obs[i] for i, agent in enumerate(self.agents)},
+                   {agent: 0 for i, agent in enumerate(self.agents)},
+                   {agent: done for i, agent in enumerate(self.agents)},
+                   {agent: None for i, agent in enumerate(self.agents)}]
+            return ret
+
+        state = self.env.get_state()
+        angles = state[1:3]
+        # check if two angles meet the task
+        correct = [abs(angles[0] - self.current_task) < self.EPSILON, abs(angles[1] - self.current_task) < self.EPSILON]
+        if sum(correct) == 2:
+            reward *= 1
+            self.logging.info('YAY!')
+        elif sum(correct) == 0:
+            reward *= 0.5
+        else:
+            reward *= 0
+
+        ret = [{agent: obs[i] for i, agent in enumerate(self.agents)},
+               {agent: reward for i, agent in enumerate(self.agents)},
+               {agent: done for i, agent in enumerate(self.agents)},
+               {agent: None for i, agent in enumerate(self.agents)}]
+        return ret
+
+    def observation_space(self, agent):
+        return self.observation_spaces[agent]
+
+    def action_space(self, agent):
+        return self.action_spaces[agent]
+
+    @property
+    def num_agents(self):
+        return len(self.agents)
+
+    @property
+    def max_num_agents(self):
+        return len(self.possible_agents)
+
+    def __str__(self):
+        return "Multi_Swimmer_v2"
+
+    @property
+    def unwrapped(self):
+        return self.env
+
+    def render(self, mode="human"):
+        return [self.env.env.render(mode=mode)]
+
+
+"""class SwimmerWrapper(ParallelEnv):
     EPSILON = 2e-2
     RANGE = 1e-2
 
@@ -228,3 +338,4 @@ class SwimmerWrapper(ParallelEnv):
 
     def render(self, mode="human"):
         return [self.env.env.render(mode=mode)]
+"""
